@@ -1,21 +1,35 @@
 require( 'dotenv' ).config() // looks for .env ; process.env gets it's values
 
+const mongoose = require('mongoose')
 const path = require('path')
 const express = require('express')
 const apiRouter = require('./app/router')
 const app = express()
 
+
+
+
+
+
+
 const PORT = process.env.PORT || 8080
 const API_URL = process.env.NODE_ENV === 'production' ?
-   'https://yoursite.herokuapp.com' : `http://localhost:${PORT}`
+   'https://lakesideleisureaap.herokuapp.com' : `http://localhost:${PORT}`
 // production uses REACT production-build content
 const STATIC_PATH = process.env.NODE_ENV === 'production' ?
    path.join('client','build') : path.join('client','public')
+
+
+
 
 if( !process.env.MONGODB_URI ){
    console.log( '*ERROR* You need a .env file (with MONGODB_URI,...)' )
    process.exit()
 }
+
+
+
+
 
 // for parsing incoming POST data
 app.use(express.urlencoded({ extended: true }))
