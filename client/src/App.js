@@ -23,7 +23,7 @@ function App() {
             {/* <AlertBar /> */}
             <NavBar />
             <NavBar2 />
-            {/* <Route exact path ={["/", "/index"]} component={HomePage}/> */}
+            <Route exact path ={["/", "/index"]} component={HomePage}/>
             <Route exact path ={["/Reviews"]} component={Reviews}/>
             <Route exact path ={["/Resources"]} component={Resources}/>
             <Route exact path={"/tasks"} component={Tasks} />
