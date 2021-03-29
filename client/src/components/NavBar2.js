@@ -20,6 +20,15 @@ function NavBar2(){
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Message Boards</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Logout</a>
+                            </li>
 
                         </ul>
                         <form class="d-flex">
