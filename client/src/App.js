@@ -4,7 +4,7 @@ import { StoreProvider } from "./util/GlobalStore"
 
 import NavBar from "./components/NavBar"
 import NavBar2 from './components/NavBar2'
-import Footer from "./components/Footer"
+import Footer from "./components/Footer/Footer"
 import AlertBar from "./components/AlertBar"
 // pages
 import Tasks from "./pages/Tasks"
@@ -21,7 +21,7 @@ function App() {
       <BrowserRouter>
         <div class="container">
             {/* <AlertBar /> */}
-            <NavBar />
+            {/* <NavBar /> */}
             <NavBar2 />
             <Route exact path ={["/", "/index"]} component={HomePage}/>
             <Route exact path ={["/Reviews"]} component={Reviews}/>

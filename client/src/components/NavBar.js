@@ -8,7 +8,7 @@ let timeout
 
 function NavBar() {
   const [{ authOk, name }, dispatch ]= useStoreContext()
-  const [ showMenu, setShowMenu ] = useState( false )
+  const [ showMenu, setShowMenu ] = useState( true )
   const location = useLocation()
 
   async function loadUserSession(){
@@ -44,7 +44,7 @@ function NavBar() {
 
   return ( 
     <>
-      { localStorage.session && 
+      {/* { localStorage.session &&  */}
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <NavLink to="/" className="navbar-brand">
               <img src={Paws} alt="" width="64" height="64" />

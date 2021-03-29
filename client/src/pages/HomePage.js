@@ -13,9 +13,6 @@ function HomePage(){
 
         <Carousel />
 
-
-
-
         </>
     )
 

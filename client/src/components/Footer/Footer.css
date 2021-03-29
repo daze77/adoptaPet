@@ -1,0 +1,18 @@
+.footerContact{
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+
+
+#subfooter{
+    background-color: black;
+    color: blanchedalmond;
+    padding: 30px
+}
+
+#subfooterCo{
+    font-size: 20px;
+    text-align: center;
+    margin-left: 5px;
+}

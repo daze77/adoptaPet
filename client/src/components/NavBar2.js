@@ -1,10 +1,96 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Redirect, NavLink, useLocation  } from "react-router-dom"
+import { useStoreContext } from "../util/GlobalStore"
+import fetchJSON from '../util/API'
+import Paws from '../assets/images/paws.png'
+
+let timeout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 function NavBar2(){
+
+
+
+    const [{ authOk, name }, dispatch ]= useStoreContext()
+    const [ showMenu, setShowMenu ] = useState( true )
+    const location = useLocation()
+  
+    async function loadUserSession(){
+      const { status, userData, message }= await fetchJSON( `/api/users/session` )
+      console.log( `[NavBar] attempted to reload session, result(${status}) message(${message})` )
+      if( !status ){
+        // clear any session
+        dispatch({ type: 'USER_LOGOUT', message })
+        return
+      }
+      dispatch({ type: 'USER_LOGIN', data: userData })
+    }
+  
+    useEffect( function(){
+      if( showMenu ){
+        if( timeout ) clearTimeout( timeout )
+        timeout = setTimeout( function(){ setShowMenu( false ); }, 2000 )
+      }
+    }, [ showMenu ])
+  
+    // location changed so hide menu
+    useEffect( function(){
+      if( timeout ) clearTimeout( timeout )
+      setShowMenu( false )
+    }, [ location ])
+    
+    useEffect( function(){
+      // on load let's get try to get the  session (if one exists)
+      if( localStorage.session && !authOk ){
+        loadUserSession()
+      }
+    }, [] )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -12,10 +98,12 @@ function NavBar2(){
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
+                    <NavLink to="/" className="navbar-brand">
+                        <img src={Paws} alt="" width="64" height="64" />
+                    </NavLink>
                     <NavLink to="/" class="navbar-brand" className="nav-link" activeClassName="active">Adopt-A-Pet</NavLink>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
                             <li class="nav-item"> <NavLink to="/MessageBoards" className="nav-link" activeClassName="active">
                                 Message Boards</NavLink>
                             </li>
@@ -25,6 +113,9 @@ function NavBar2(){
                             <li class="nav-item"> <NavLink to="/Reviews" className="nav-link" activeClassName="active">
                                 Reviews</NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
+                            </li>  
                             <li class="nav-item"> <NavLink to="/Register" className="nav-link" activeClassName="active">
                                 Register</NavLink>
                             </li>
@@ -34,15 +125,56 @@ function NavBar2(){
                             <li class="nav-item"> <NavLink to="/Logout" className="nav-link" activeClassName="active">
                                 Logout</NavLink>
                             </li>
-
                         </ul>
+                        {name && <div class="d-flex"><div class="mx-3">Welcome back <u>{name}</u></div></div>}
+                        <br/>
                         <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
+
                     </div>
                 </div>
             </nav>
+
+
+
+
+
+
+
+
+
+            {/* // Fils code */}
+
+            {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+          <button onClick={() => setShowMenu(!showMenu)} class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div className={`collapse navbar-collapse `+(showMenu ? 'show' : '')} id="navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
+              </li>          
+
+            </ul>
+
+          </div>
+        </nav> */}
+
+
+
+
+
+
+
+
+
+
+
+
         </>
 
     )
