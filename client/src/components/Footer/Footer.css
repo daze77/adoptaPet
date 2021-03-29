@@ -1,9 +1,14 @@
-#footer{
+#footerright{
     background-color: lightgrey;
     color: black;
     padding: 30px
 }
 
+#footerleft{
+   
+    background-color: slategray;
+    padding: 30px;
+}
 
 .footerContact{
     display: block;
