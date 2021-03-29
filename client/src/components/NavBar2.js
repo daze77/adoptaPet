@@ -17,7 +17,7 @@ function NavBar2(){
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                             <li class="nav-item"> <NavLink to="/MessageBoards" className="nav-link" activeClassName="active">
-                                Message Boards</NavLink>
+                                Message Board</NavLink>
                             </li>
                             <li class="nav-item"> <NavLink to="/Resources" className="nav-link" activeClassName="active">
                                 Resources</NavLink>
