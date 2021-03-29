@@ -15,11 +15,15 @@ function NavBar2(){
                     <NavLink to="/" class="navbar-brand" className="nav-link" activeClassName="active">Adopt-A-Pet</NavLink>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item"> <NavLink to="/" className="nav-link" activeClassName="active">
-                                Home</NavLink>
-                            </li>
+
                             <li class="nav-item"> <NavLink to="/MessageBoards" className="nav-link" activeClassName="active">
                                 Message Boards</NavLink>
+                            </li>
+                            <li class="nav-item"> <NavLink to="/Resources" className="nav-link" activeClassName="active">
+                                Resources</NavLink>
+                            </li>
+                            <li class="nav-item"> <NavLink to="/Reviews" className="nav-link" activeClassName="active">
+                                Reviews</NavLink>
                             </li>
                             <li class="nav-item"> <NavLink to="/Register" className="nav-link" activeClassName="active">
                                 Register</NavLink>

@@ -12,6 +12,9 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Logout from "./pages/Logout"
 import HomePage from "./pages/HomePage"
+import Reviews from './pages/Reviews'
+import Resources from './pages/Resources'
+
 function App() {
   return (
     <StoreProvider>
@@ -20,7 +23,9 @@ function App() {
             {/* <AlertBar /> */}
             <NavBar />
             <NavBar2 />
-            <Route exact path ={["/", "/index"]} component={HomePage}/>
+            {/* <Route exact path ={["/", "/index"]} component={HomePage}/> */}
+            <Route exact path ={["/Reviews"]} component={Reviews}/>
+            <Route exact path ={["/Resources"]} component={Resources}/>
             <Route exact path={"/tasks"} component={Tasks} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
