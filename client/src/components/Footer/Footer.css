@@ -1,4 +1,12 @@
+#footer{
+    background-color: lightgrey;
+    color: black;
+    padding: 30px
+}
+
+
 .footerContact{
+    display: block;
     font-size: 15px;
     font-weight: bolder;
 }
@@ -8,11 +16,15 @@
 #subfooter{
     background-color: black;
     color: blanchedalmond;
-    padding: 30px
+    padding: 15px
 }
 
 #subfooterCo{
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     margin-left: 5px;
+}
+
+#subcopyright{
+    font-size: 12px;
 }

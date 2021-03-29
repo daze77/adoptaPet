@@ -19,10 +19,11 @@ function App() {
   return (
     <StoreProvider>
       <BrowserRouter>
+        {/* <AlertBar /> */}
+        {/* <NavBar /> */}
+        <NavBar2 />
         <div class="container">
-            {/* <AlertBar /> */}
-            {/* <NavBar /> */}
-            <NavBar2 />
+
             <Route exact path ={["/", "/index"]} component={HomePage}/>
             <Route exact path ={["/Reviews"]} component={Reviews}/>
             <Route exact path ={["/Resources"]} component={Resources}/>
@@ -30,8 +31,8 @@ function App() {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
-            <Footer />
         </div>
+        <Footer />
       </BrowserRouter>
     </StoreProvider>
   );

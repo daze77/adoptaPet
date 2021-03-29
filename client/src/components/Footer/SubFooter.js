@@ -11,11 +11,10 @@ function SubFooter(){
 
     }
     return (
-
         <>  
             <div id="subfooter" class="d-flex justify-content-center ">
-                <span class="align-self-center">&copy; Copyright {getFullYear()} </span> 
-                <strong id="subfooterCo">  Lakesideleisure Inc. </strong>
+                <span id="subcopyright" class="align-self-center">&copy; Copyright {getFullYear()} </span> 
+                <strong id="subfooterCo" class="align-self-center">  Lakesideleisure Inc. </strong>
             </div>
         </>
     )

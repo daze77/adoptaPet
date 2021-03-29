@@ -44,7 +44,7 @@ function NavBar() {
 
   return ( 
     <>
-      {/* { localStorage.session &&  */}
+      { localStorage.session && 
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <NavLink to="/" className="navbar-brand">
               <img src={Paws} alt="" width="64" height="64" />
