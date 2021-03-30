@@ -6,29 +6,7 @@ import Paws from '../assets/images/paws.png'
 
 let timeout
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function NavBar2(){
-
-
 
     const [{ authOk, name }, dispatch ]= useStoreContext()
     const [ showMenu, setShowMenu ] = useState( true )
@@ -65,44 +43,15 @@ function NavBar2(){
       }
     }, [] )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
-                    <NavLink to="/" className="navbar-brand">
-                        <img src={Paws} alt="" width="64" height="64" />
-                    </NavLink>
-                    <NavLink to="/" class="navbar-brand" className="nav-link" activeClassName="active">Adopt-A-Pet</NavLink>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <NavLink to="/" class="navbar-brand" className="nav-link" activeClassName="active"><img src={Paws} alt="" width="64" height="64" />   <stong>   Adopt-A-Pet</stong></NavLink>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item"> <NavLink to="/MessageBoards" className="nav-link" activeClassName="active">
                                 Message Boards</NavLink>
@@ -128,10 +77,10 @@ function NavBar2(){
                         </ul>
                         {name && <div class="d-flex"><div class="mx-3">Welcome back <u>{name}</u></div></div>}
                         <br/>
-                        <form class="d-flex">
+                        {/* <form class="d-flex">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                        </form> */}
 
                     </div>
                 </div>
