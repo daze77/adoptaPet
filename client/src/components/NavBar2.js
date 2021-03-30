@@ -10,7 +10,15 @@ function NavBar2(){
 
     const [{ authOk, name }, dispatch ]= useStoreContext()
     const [ showMenu, setShowMenu ] = useState( true )
+    // adding const for menu toggle
+    const [showMenuItem, setShowMenuItem] = useState("Login")
     const location = useLocation()
+    console.log(`this is authOK`, authOk)
+    console.log(`this is name`, name)
+
+    console.log(`this is showMenu`, showMenu)
+    console.log(`this is location`, location)
+
   
     async function loadUserSession(){
       const { status, userData, message }= await fetchJSON( `/api/users/session` )
@@ -59,29 +67,35 @@ function NavBar2(){
                             <li class="nav-item"> <NavLink to="/Resources" className="nav-link" activeClassName="active">
                                 Resources</NavLink>
                             </li>
-                            <li class="nav-item"> <NavLink to="/Reviews" className="nav-link" activeClassName="active">
+                            <li class="nav-item"> <NavLink to="/Reviews" className="nav-link" activeClassName="active" >
                                 Reviews</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
-                            </li>  
-                            <li class="nav-item"> <NavLink to="/Register" className="nav-link" activeClassName="active">
-                                Register</NavLink>
                             </li>
-                            <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">
-                                Login</NavLink>
-                            </li>
-                            <li class="nav-item"> <NavLink to="/Logout" className="nav-link" activeClassName="active">
-                                Logout</NavLink>
-                            </li>
+                            {showMenuItem && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>}
                         </ul>
-                        {name && <div class="d-flex"><div class="mx-3">Welcome back <u>{name}</u></div></div>}
-                        <br/>
-                        {/* <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form> */}
+                        {/* {name && <div class="d-flex"><div class="mx-3">Welcome back <u>{name}</u></div></div>} */}
+                        {name && 
+                            <div class="d-flex">
+                                <div class="mx-3">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Welcome back <u>{name}</u>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                                <li class="nav-item"> <NavLink to="/Register" className="nav-link" activeClassName="active">Register</NavLink></li>
+                                                <li><hr class="dropdown-divider"/></li>
+                                                <li class="nav-item"> <NavLink to="/Logout" className="nav-link" activeClassName="active">Logout</NavLink></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
 
+                        <br/>
                     </div>
                 </div>
             </nav>
