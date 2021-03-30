@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import NavBar from "./components/NavBar"
 import NavBar2 from './components/NavBar2'
-import Footer from "./components/Footer"
+import Footer from "./components/Footer/Footer"
 import AlertBar from "./components/AlertBar"
 // pages
 import Tasks from "./pages/Tasks"
@@ -21,10 +21,11 @@ function App() {
   return (
     <StoreProvider>
       <BrowserRouter>
+        {/* <AlertBar /> */}
+        {/* <NavBar /> */}
+        <NavBar2 />
         <div class="container">
-            {/* <AlertBar /> */}
-            <NavBar />
-            <NavBar2 />
+
             <Route exact path ={["/", "/index"]} component={HomePage}/>
             <Route exact path ={["/MessageBoards"]} component={MessageBoard}/>
             <Route exact path ={["/Reviews"]} component={Reviews}/>
@@ -33,8 +34,8 @@ function App() {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
-            <Footer />
         </div>
+        <Footer />
       </BrowserRouter>
     </StoreProvider>
   );

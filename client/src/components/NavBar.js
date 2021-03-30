@@ -8,7 +8,7 @@ let timeout
 
 function NavBar() {
   const [{ authOk, name }, dispatch ]= useStoreContext()
-  const [ showMenu, setShowMenu ] = useState( false )
+  const [ showMenu, setShowMenu ] = useState( true )
   const location = useLocation()
 
   async function loadUserSession(){
