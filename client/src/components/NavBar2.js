@@ -85,7 +85,6 @@ function NavBar2(){
                                                 Welcome back <u>{name}</u>
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                                <li class="nav-item"> <NavLink to="/Register" className="nav-link" activeClassName="active">Register</NavLink></li>
                                                 <li><hr class="dropdown-divider"/></li>
                                                 <li class="nav-item"> <NavLink to="/Logout" className="nav-link" activeClassName="active">Logout</NavLink></li>
                                             </ul>

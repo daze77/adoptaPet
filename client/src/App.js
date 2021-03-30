@@ -1,7 +1,7 @@
 import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import { StoreProvider } from "./util/GlobalStore"
-import "bootstrap/dist/css/bootstrap.min.css"
+// import "bootstrap/dist/css/bootstrap.min.css"
 
 import NavBar from "./components/NavBar"
 import NavBar2 from './components/NavBar2'
