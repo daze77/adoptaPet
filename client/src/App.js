@@ -20,6 +20,7 @@ import MessageBoard from './pages/MessageBoard'
 import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
+import Pets from "./pages/Pets"
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route exact path ={["/Resources"]} component={Resources}/>
             <Route exact path={"/tasks"} component={Tasks} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/Pets" component={Pets} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/AboutUs" component={AboutUs} />
