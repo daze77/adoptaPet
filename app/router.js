@@ -73,6 +73,22 @@ function router( app ){
       console.log( ` .. updated with '${newTask}' for ownerId(${req.sessionData.userId})` )
       res.send({ status, tasks, message })
    })
+
+   app.get('/api/messages', authRequired, async function(req, res) {
+      const {status, messageList} = await orm.messageList( req.sessionData.userId )
+      console.log( ` .. got ${messageList.length} message for ownerId(${req.sessionData.userId})` )
+      res.send({ status, messageList })
+   })
+
+   app.post('/api/messages', authRequired, async function(req, res) {
+      const newMessage = req.body.message
+      const newSubject = req.body.subject
+      const newName = req.body.name
+      console.log('newMessage', newMessage)
+      const { status, messages }= await orm.messageSaveAndList( newMessage, newSubject, newName, req.sessionData.userId )
+      console.log( ` .. updated with '${newMessage}' for ownerId(${req.sessionData.userId})` )
+      res.send({ status, messages })
+   })
 }
 
 module.exports = router

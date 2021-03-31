@@ -111,10 +111,37 @@ async function taskSaveAndList( newTask, ownerId ){
    return taskList( ownerId, 'Task saved' )
 }
 
+async function messageList( ownerId, subject='', message='' ){
+   // refuse duplicate user emails
+   const messageList = await db.messages.find({ ownerId }, '-ownerId -__v')
+
+   return {
+      status: true,
+      messageList,
+      message
+   }
+}
+
+async function messageSaveAndList( newMessage, subject, name, ownerId ){
+   // refuse duplicate user emails
+   const result = await db.messages.create({ message: newMessage, subject: subject, name: name, ownerId })
+   if( !result._id ){
+      return {
+         status: false,
+         subject: 'Subject required',
+         message: 'Sorry could not save message!'
+      }
+   }
+
+   return messageList( ownerId, 'Message saved' )
+}
+
 module.exports = {
    userRegister,
    userLogin,
    userSession,
    taskList,
-   taskSaveAndList
+   taskSaveAndList,
+   messageList,
+   messageSaveAndList
 };

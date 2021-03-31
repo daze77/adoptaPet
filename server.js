@@ -5,6 +5,7 @@ const path = require('path')
 const express = require('express')
 const apiRouter = require('./app/router')
 const app = express()
+const Messages = require('./app/db/models/messages');
 
 
 
@@ -50,6 +51,7 @@ if (process.env.NODE_ENV === 'production') {
    })
    console.log( '!! Be sure to run "npm run build" to prepare production react code!')
 }
+
 
 app.listen(PORT, function(){
    console.log( `Serving app on: ${API_URL}}` )
