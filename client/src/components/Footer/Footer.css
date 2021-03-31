@@ -11,10 +11,18 @@
     padding: 30px
 }
 
-#footerleft{
-   
+#footerleftimage{
+
     background-color: slategray;
+    /* background-image: url(../../assets/images/tracks.jpg); */
+    background-size: cover;
+    position:relative;
     padding: 30px;
+}
+
+#footerlefttext{
+    font-weight: bolder;
+
 }
 
 .footerContact{
@@ -39,4 +47,13 @@
 
 #subcopyright{
     font-size: 12px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a, a:link, a:visited, a:hover, a:active{
+    text-decoration: none;
+    color: inherit;
 }

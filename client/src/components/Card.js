@@ -10,7 +10,7 @@ function Card(props) {
         backgroundImage: props.image ? `url(${props.image})` : "none"
       }}
     >
-      {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />}
+      {/* {!props.image && <i className="fa fa-spinner fa-spin" aria-hidden="true" />} */}
       <CardBtn
         onClick={props.handleBtnClick}
         data-value="pass"

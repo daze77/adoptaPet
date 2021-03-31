@@ -1,4 +1,6 @@
 import React from "react"
+import { Link  } from "react-router-dom"
+
 
 
 function SubFooter(){
@@ -14,7 +16,7 @@ function SubFooter(){
         <>  
             <div id="subfooter" class="d-flex justify-content-center ">
                 <span id="subcopyright" class="align-self-center">&copy; Copyright {getFullYear()} </span> 
-                <strong id="subfooterCo" class="align-self-center">  Lakesideleisure Inc. </strong>
+                <strong id="subfooterCo" class="align-self-center"><Link to="/">Lakesideleisure Inc.</Link> </strong>
             </div>
         </>
     )

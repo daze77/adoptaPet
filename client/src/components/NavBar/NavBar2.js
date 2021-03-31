@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect, NavLink, useLocation  } from "react-router-dom"
-import { useStoreContext } from "../util/GlobalStore"
-import fetchJSON from '../util/API'
-import Paws from '../assets/images/paws.png'
+import { useStoreContext } from "../../util/GlobalStore"
+import fetchJSON from '../../util/API'
+import Paws from '../../assets/images/paws.png'
 
 let timeout
 
@@ -11,8 +11,11 @@ function NavBar2(){
     const [{ authOk, name }, dispatch ]= useStoreContext()
     const [ showMenu, setShowMenu ] = useState( true )
     // adding const for menu toggle
-    const [showMenuItem, setShowMenuItem] = useState("Login")
+   
+    const Login = "Login"
+
     const location = useLocation()
+  
     console.log(`this is authOK`, authOk)
     console.log(`this is name`, name)
 
@@ -73,9 +76,13 @@ function NavBar2(){
                             <li className="nav-item">
                                 <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
                             </li>
-                            {showMenuItem && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>}
+                            {/* {showMenuItem && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>} */}
+                            <div className={`collapse navbar-collapse ` + (showMenu ? 'show' : '')} id="navbar">
+                              {Login && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>}
+                            </div>
+
                         </ul>
-                        {/* {name && <div class="d-flex"><div class="mx-3">Welcome back <u>{name}</u></div></div>} */}
+
                         {name && 
                             <div class="d-flex">
                                 <div class="mx-3">
