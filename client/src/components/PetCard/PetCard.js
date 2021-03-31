@@ -1,25 +1,17 @@
 import React from "react";
-import {useState} from 'react'
+
 import Pets from '../../pets.json'
 
 
 
 
-function Card() {
-
-    const [pets, setPet] = useState([Pets])
-    console.log(`this is pets`, pets)
-
-
-
-
-    // function getPets(){
-    //     Pets.
-    // }
-
-
+function PetCard() {
+    console.log(`this is Pets pulled from the JSON`, Pets)
 
   return (
+
+    <>
+
         <div>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 {Pets.map(petsinfo => (
@@ -35,21 +27,14 @@ function Card() {
                                 </div>
                         </div>
                     </div>
-
-
-
-
-
-
                 ))}
-
             </div>
-
-
-
-
         </div>
+
+        </>
   );
+
+  
 }
 
-export default Card;
+export default PetCard;
