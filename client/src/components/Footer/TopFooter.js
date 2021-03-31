@@ -1,6 +1,6 @@
 import React from "react"
 import { Link  } from "react-router-dom"
-import Address from '../address'
+import Address from '../Address'
 
 
 function TopFooter(){

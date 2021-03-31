@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect, NavLink, useLocation  } from "react-router-dom"
-import { useStoreContext } from "../util/GlobalStore"
-import fetchJSON from '../util/API'
-import Paws from '../assets/images/paws.png'
+import { useStoreContext } from "../../util/GlobalStore"
+import fetchJSON from '../../util/API'
 
 let timeout
 
@@ -47,7 +46,7 @@ function NavBar() {
       { localStorage.session && 
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <NavLink to="/" className="navbar-brand">
-              <img src={Paws} alt="" width="64" height="64" />
+              <img src="" alt="" width="64" height="64" />
           </NavLink>
           <button onClick={() => setShowMenu(!showMenu)} class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
             <span class="navbar-toggler-icon"></span>

@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom"
 import { StoreProvider } from "./util/GlobalStore"
 // import "bootstrap/dist/css/bootstrap.min.css"
 
+// import NavBar from './components/NavBar/NavBar'
 
 import NavBar2 from './components/NavBar/NavBar2'
 import Footer from "./components/Footer/Footer"
@@ -27,6 +28,7 @@ function App() {
         {/* <AlertBar /> */}
         {/* <NavBar /> */}
         <NavBar2 />
+        {/* <NavBar /> */}
         <div class="container">
 
             <Route exact path ={["/", "/index"]} component={HomePage}/>
