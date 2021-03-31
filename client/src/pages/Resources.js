@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "../components/Card";
+import Card from "../components/Card1";
 import APIshelter from "../util/APIshelter";
 
 
