@@ -118,6 +118,7 @@ async function messageList( ownerId, subject='', message='' ){
    return {
       status: true,
       messageList,
+      subject,
       message
    }
 }
@@ -143,7 +144,9 @@ async function reviewList( ownerId, organization='', subject='', review='' ){
    return {
       status: true,
       reviewList,
-      message
+      organization,
+      subject,
+      review
    }
 }
 
