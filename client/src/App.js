@@ -7,7 +7,7 @@ import { StoreProvider } from "./util/GlobalStore"
 
 import NavBar2 from './components/NavBar/NavBar2'
 import Footer from "./components/Footer/Footer"
-import AlertBar from "./components/AlertBar"
+// import AlertBar from "./components/AlertBar"
 // pages
 import Tasks from "./pages/Tasks"
 import Register from "./pages/Register"
