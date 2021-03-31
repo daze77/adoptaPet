@@ -1,22 +1,42 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
+import APIshelter from "../util/APIshelter";
+
+
 
 function Resources() {
-   
-    return (
-        
-      <div>
-        <h1 className="text-center">Adopt A Pet</h1>
-        <h3 className="text-center">
-          Click on any pet you would like to adopt
-        </h3>
-        <Card />
-        <h1 className="text-center">
-          Selected {} pets so far!
-        </h1>
-      </div>
-    );
+  const [shelters, setShelter] = useState([])
+
+
+  function getShelters() {
+    APIshelter().then(shelters => {
+      setShelter(shelters);
+    })
+      .catch(err => console.log(err))
   }
+
+  useEffect(() => {
+    getShelters();
+  }, [])
+  return (
+
+    <div>
+      <title>Animal Shelters</title>
+      <h3 className="text-center">
+        Find an Animal Shelter in Toronto
+        </h3>
+      {shelters.map(shelter => (
+        <Card
+          id={shelter.id}
+          key={shelter.id}
+          name={shelter.name}
+          image={shelter.image}
+          address={shelter.address}
+          url={shelter.url}
+          />))}
+    </div>
+  );
+}
 
 
 
