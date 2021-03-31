@@ -1,10 +1,11 @@
 import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import { StoreProvider } from "./util/GlobalStore"
-import "bootstrap/dist/css/bootstrap.min.css"
+// import "bootstrap/dist/css/bootstrap.min.css"
 
-import NavBar from "./components/NavBar"
-import NavBar2 from './components/NavBar2'
+// import NavBar from './components/NavBar/NavBar'
+
+import NavBar2 from './components/NavBar/NavBar2'
 import Footer from "./components/Footer/Footer"
 import AlertBar from "./components/AlertBar"
 // pages
@@ -16,6 +17,9 @@ import HomePage from "./pages/HomePage"
 import Reviews from './pages/Reviews'
 import Resources from './pages/Resources'
 import MessageBoard from './pages/MessageBoard'
+import AboutUs from "./pages/AboutUs"
+import ContactUs from "./pages/ContactUs"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
 
 function App() {
   return (
@@ -24,6 +28,7 @@ function App() {
         {/* <AlertBar /> */}
         {/* <NavBar /> */}
         <NavBar2 />
+        {/* <NavBar /> */}
         <div class="container">
 
             <Route exact path ={["/", "/index"]} component={HomePage}/>
@@ -34,6 +39,9 @@ function App() {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
+            <Route exact path="/AboutUs" component={AboutUs} />
+            <Route exact path="/ContactUs" component={ContactUs} />
+            <Route exact path="/PrivacyPolicy" component={PrivacyPolicy} />
         </div>
         <Footer />
       </BrowserRouter>

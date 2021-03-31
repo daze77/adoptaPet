@@ -10,6 +10,7 @@ const dataReducer = (state, action) => {
   switch (action.type) {
     case "USER_LOGIN":
      return { ...state, ...action.data, alert: action.message || '', authOk: true }
+     
       
     case "USER_LOGOUT":
       // needed to force this reload (else it just refreshed with invalid content)

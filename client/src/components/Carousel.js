@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link  } from "react-router-dom"
+
 
 import Dog from '../assets/images/Dog'
 import Cat from '../assets/images/Cat'
@@ -11,6 +13,7 @@ function Carousel(){
 
     return(
         <>
+
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -19,24 +22,24 @@ function Carousel(){
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src={Dog} class="d-block w-100" alt="..." />
+                        <Link to="/Resources"><img src={Dog} class="d-block w-100" alt="..." /></Link>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            {/* <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p> */}
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src={Cat} class="d-block w-100" alt="..." />
+                        <Link to="/Resources"><img src={Cat} class="d-block w-100" alt="..." /></Link>
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            {/* <p>Some representative placeholder content for the second slide.</p> */}
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src={Turtle} class="d-block w-100" alt="..." />
+                        <Link to="/Resources"><img src={Turtle} class="d-block w-100" alt="..." /></Link>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            {/* <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p> */}
                         </div>
                     </div>
                 </div>
@@ -49,6 +52,7 @@ function Carousel(){
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+
 
 
 
