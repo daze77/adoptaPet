@@ -89,6 +89,23 @@ function router( app ){
       console.log( ` .. updated with '${newMessage}' for ownerId(${req.sessionData.userId})` )
       res.send({ status, messages })
    })
+
+   app.get('/api/reviews', authRequired, async function(req, res) {
+      const {status, reviewList} = await orm.reviewList( req.sessionData.userId )
+      console.log( ` .. got ${reviewList.length} message for ownerId(${req.sessionData.userId})` )
+      res.send({ status, reviewList })
+   })
+
+   app.post('/api/reviews', authRequired, async function(req, res) {
+      const newReview = req.body.review
+      const newSubject = req.body.subject
+      const newOrganization = req.body.organization
+      const newName = req.body.name
+      console.log('newReview', newReview)
+      const { status, reviews }= await orm.reviewSaveAndList( newReview, newSubject, newOrganization, newName, req.sessionData.userId )
+      console.log( ` .. updated with '${newReview}' for ownerId(${req.sessionData.userId})` )
+      res.send({ status, reviews })
+   })
 }
 
 module.exports = router

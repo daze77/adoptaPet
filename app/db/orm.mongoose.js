@@ -136,6 +136,32 @@ async function messageSaveAndList( newMessage, subject, name, ownerId ){
    return messageList( ownerId, 'Message saved' )
 }
 
+async function reviewList( ownerId, organization='', subject='', review='' ){
+   // refuse duplicate user emails
+   const reviewList = await db.reviews.find({ ownerId }, '-ownerId -__v')
+
+   return {
+      status: true,
+      reviewList,
+      message
+   }
+}
+
+async function reviewSaveAndList( newReview, subject, organization, name, ownerId ){
+   // refuse duplicate user emails
+   const result = await db.reviews.create({ review: newReview, subject: subject, organization: organization, name: name, ownerId })
+   if( !result._id ){
+      return {
+         status: false,
+         subject: 'Subject required',
+         organization: 'Organization required',
+         message: 'Sorry could not save review!'
+      }
+   }
+
+   return reviewList( ownerId, 'Review saved' )
+}
+
 module.exports = {
    userRegister,
    userLogin,
@@ -143,5 +169,7 @@ module.exports = {
    taskList,
    taskSaveAndList,
    messageList,
-   messageSaveAndList
+   messageSaveAndList,
+   reviewList,
+   reviewSaveAndList
 };

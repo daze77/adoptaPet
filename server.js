@@ -5,7 +5,8 @@ const path = require('path')
 const express = require('express')
 const apiRouter = require('./app/router')
 const app = express()
-const Messages = require('./app/db/models/messages');
+const Messages = require('./app/db/models/messages')
+const Reviews = require('./app/db/models/reviews')
 
 
 
