@@ -90,6 +90,17 @@ function router( app ){
       res.send({ status, messages })
    })
 
+   app.post('/api/messagereply', authRequired, async function(req, res) {
+      const newMessage = req.body.message
+      const newSubject = req.body.subject
+      const newName = req.body.name
+      const id = req.body.id
+      console.log('newMessage', newMessage)
+      const { status, messages }= await orm.messageReplySaveAndList( newMessage, newSubject, newName, id, req.sessionData.userId )
+      console.log( ` .. updated with '${newMessage}' for ownerId(${req.sessionData.userId})` )
+      res.send({ status, messages })
+   })
+
    app.get('/api/reviews', authRequired, async function(req, res) {
       const {status, reviewList} = await orm.reviewList( req.sessionData.userId )
       console.log( ` .. got ${reviewList.length} message for ownerId(${req.sessionData.userId})` )
