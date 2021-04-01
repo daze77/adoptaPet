@@ -56,6 +56,9 @@ function NavBar2(){
                     <NavLink to="/" class="navbar-brand" className="nav-link" activeClassName="active"><img src={Paws} alt="" width="64" height="64" />   <strong>   Adopt-A-Pet</strong></NavLink>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"> <NavLink to="/Pets" className="nav-link" activeClassName="active" >
+                                Pets</NavLink>
+                            </li>
                             <li class="nav-item"> <NavLink to="/MessageBoards" className="nav-link" activeClassName="active">
                                 Message Board</NavLink>
                             </li>
@@ -64,9 +67,6 @@ function NavBar2(){
                             </li>
                             <li class="nav-item"> <NavLink to="/Reviews" className="nav-link" activeClassName="active" >
                                 Reviews</NavLink>
-                            </li>
-                            <li class="nav-item"> <NavLink to="/Pets" className="nav-link" activeClassName="active" >
-                                Pets</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
@@ -81,7 +81,7 @@ function NavBar2(){
                         {name && 
                             <div class="d-flex">
                                 <div class="mx-3">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Welcome back <u>{name}</u>

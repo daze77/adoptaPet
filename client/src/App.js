@@ -23,6 +23,9 @@ import PrivacyPolicy from "./pages/PrivacyPolicy"
 import Pets from "./pages/Pets"
 import Background3 from "./assets/images/Background3.jpeg"
 
+
+import Geo from "./components/Geo/Geo"
+
 function App() {
   return (
     <StoreProvider>
@@ -49,6 +52,7 @@ function App() {
           </div>
         </div>
         <Footer />
+        {/* <Geo /> */}
       </BrowserRouter>
     </StoreProvider>
   );
