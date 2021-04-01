@@ -11,7 +11,7 @@ function PickMeBtn() {
 
 
 
-        <i class="fas fa-dog fa-lg" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" ></i><small class="text-muted">  Pick Me!</small>
+        <i class="fas fa-dog fa-lg" type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"  ></i><small class="text-muted">  Pick Me!</small>
     </>
 
   )
