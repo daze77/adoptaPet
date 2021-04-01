@@ -113,7 +113,7 @@ async function taskSaveAndList( newTask, ownerId ){
 
 async function messageList( ownerId, subject='', message='' ){
    // refuse duplicate user emails
-   const messageList = await db.messages.find({ ownerId }, '-ownerId -__v')
+   const messageList = await db.messages.find({ ownerId }, '-ownerId -__v').populate('reply').sort({createdAt: -1})
 
    return {
       status: true,
@@ -137,9 +137,24 @@ async function messageSaveAndList( newMessage, subject, name, ownerId ){
    return messageList( ownerId, 'Message saved' )
 }
 
+async function messageReplySaveAndList( newMessage, subject, name, id, ownerId ){
+   // refuse duplicate user emails
+   const result = await db.messagereply.create({ message: newMessage, subject: subject, name: name, id: id, ownerId })
+   if( !result._id ){
+      return {
+         status: false,
+         subject: 'Subject required',
+         message: 'Sorry could not save reply!'
+      }
+   }
+   const result2 = await db.messages.updateOne({ _id: mongoose.Types.ObjectId(`${id}`) }, { $push: { reply: result._id } })
+
+   return messageList( ownerId, 'Reply saved' )
+}
+
 async function reviewList( ownerId, organization='', subject='', review='' ){
    // refuse duplicate user emails
-   const reviewList = await db.reviews.find({ ownerId }, '-ownerId -__v')
+   const reviewList = await db.reviews.find({ ownerId }, '-ownerId -__v').sort({createdAt: -1})
 
    return {
       status: true,
@@ -173,6 +188,7 @@ module.exports = {
    taskSaveAndList,
    messageList,
    messageSaveAndList,
+   messageReplySaveAndList,
    reviewList,
    reviewSaveAndList
 };
