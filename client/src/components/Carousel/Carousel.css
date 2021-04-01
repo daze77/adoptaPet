@@ -1,10 +1,10 @@
 
-.carouselbox {
+/* .carouselbox {
     width:70%;
     height:200px;
     background:#FFF;
     margin:40px auto;
-    }
+    } */
     
 .carouseleffect
 {
@@ -29,6 +29,9 @@
     -o-transform: rotate(-8deg);
     -ms-transform: rotate(-8deg);
     transform: rotate(-8deg);
+
+
+
 }
 .carouseleffect:after
 {
@@ -40,5 +43,6 @@
     right: 10px;
     left: auto;
 }
+
 
 

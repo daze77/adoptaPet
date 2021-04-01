@@ -8,6 +8,8 @@ import './Carousel.css'
 import Dog from '../../assets/images/Dog'
 import Cat from '../../assets/images/Cat'
 import Turtle from '../../assets/images/Turtle'
+import Turtle2 from '../../assets/images/Turtle2'
+
 
 
 
@@ -39,7 +41,7 @@ function Carousel(){
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <Link to="/Resources"><img src={Turtle} class="d-block w-100" alt="..." /></Link>
+                        <Link to="/Resources"><img src={Turtle2} class="d-block w-100" alt="..." /></Link>
                         <div class="carousel-caption d-none d-md-block">
                             {/* <h5>Third slide label</h5>
                             <p>Some representative placeholder content for the third slide.</p> */}

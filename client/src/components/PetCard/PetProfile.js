@@ -16,7 +16,7 @@ return (
                 <div class="modal-body">
 
 
-                    <div class="card mb-3" id="petcardformat">
+                    <div class="card mb-3" >
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTskeYNmVMeGZdNiI6ahm2z647C65saNNF4Fw&usqp=CAU" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
