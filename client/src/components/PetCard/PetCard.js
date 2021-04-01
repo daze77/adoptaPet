@@ -3,6 +3,7 @@ import React from "react";
 import PickMeBtn from './PickMeBtn'
 import PetRequisition from './PetRequisition'
 import PetProfile from './PetProfile'
+import './PetCard.css'
 
 import Pets from '../../pets.json'
 
@@ -16,10 +17,10 @@ function PetCard() {
   return (
     <>
         <div>
-            <div class="row row-cols-1 row-cols-md-3 g-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+            <div  class="row row-cols-1 row-cols-md-3 g-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >
                 {Pets.map(petsinfo => (
                     <div key={petsinfo.id} class="col">
-                        <div class="card h-100">
+                        <div class="card h-100" id="petcardformat">
                             <img src={petsinfo.image} class="card-img-top" alt="..."/>
                                 <div class="card-body">
                                     <h5 class="card-title">{petsinfo.name}</h5>

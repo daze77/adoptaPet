@@ -16,8 +16,8 @@ return (
                 <div class="modal-body">
 
 
-                    <div class="card mb-3">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTskeYNmVMeGZdNiI6ahm2z647C65saNNF4Fw&usqp=CAU" class="card-img-top" alt="..."/>
+                    <div class="card mb-3" id="petcardformat">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTskeYNmVMeGZdNiI6ahm2z647C65saNNF4Fw&usqp=CAU" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -32,14 +32,14 @@ return (
 
 
 
-                    <div class="card bg-dark text-white">
+                    {/* <div class="card bg-dark text-white">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTskeYNmVMeGZdNiI6ahm2z647C65saNNF4Fw&usqp=CAU" class="card-img" alt="..."/>
                         <div class="card-img-overlay">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text">Last updated 3 mins ago</p>
                         </div>
-                    </div>
+                    </div> */}
                     ...
                 </div>
                 <div class="modal-footer">
