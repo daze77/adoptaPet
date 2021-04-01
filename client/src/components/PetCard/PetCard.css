@@ -1,5 +1,21 @@
 #petcardformat{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
 }
+
+
+
+/* dog rotation animation */
+ .dogfafa {
+   -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    transition: 0.4s ease;
+  }
+
+  .dogfafa:hover  {
+    color: #0B486B;
+    -webkit-transform: rotateZ(720deg);
+    -moz-transform: rotateZ(720deg);
+    transform: rotateZ(720deg);
+  }
+
+  
