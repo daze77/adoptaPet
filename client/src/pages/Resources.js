@@ -4,7 +4,6 @@ import APIshelter from "../util/APIshelter";
 import Container from "../components/Container"
 
 
-
 function Resources() {
   const [shelters, setShelter] = useState([])
 
@@ -27,6 +26,7 @@ function Resources() {
         <h3 className="text-center">
           {/* Find an Animal Shelter in Toronto */}
         </h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4 gx-3"  >
         {shelters.map(shelter => (
           <ShelterCard
             id={shelter.id}
@@ -36,6 +36,7 @@ function Resources() {
             address={shelter.address}
             url={shelter.url}
           />))}
+          </div>
       </Container>
     </div>
   );
