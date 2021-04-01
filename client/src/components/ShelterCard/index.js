@@ -3,12 +3,13 @@ import './style.css'
 
 
 function Card(props) {
-  console.log(props)
+
   return (
-    <div className="card mb-3">
+
+    <div className="card mb-3" id="shelterCard">
       <div className="row">
         <div className="col-md-4">
-          <img src={props.image} className="card-img-top" alt={props.name} />
+          <img src={props.image} className="card-img" alt={props.name} />
         </div>
         <div className="col-md-8">
           <div className="content" id="content">

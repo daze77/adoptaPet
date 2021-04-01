@@ -21,6 +21,7 @@ import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
 import Pets from "./pages/Pets"
+import Background3 from "./assets/images/Background3.jpeg"
 
 function App() {
   return (
@@ -30,12 +31,13 @@ function App() {
         {/* <NavBar /> */}
         <NavBar2 />
         {/* <NavBar /> */}
-        <div class="container">
+        <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2}}>
+          <div class="container" >
 
-            <Route exact path ={["/", "/index"]} component={HomePage}/>
-            <Route exact path ={["/MessageBoards"]} component={MessageBoard}/>
-            <Route exact path ={["/Reviews"]} component={Reviews}/>
-            <Route exact path ={["/Resources"]} component={Resources}/>
+            <Route exact path={["/", "/index"]} component={HomePage} />
+            <Route exact path={["/MessageBoards"]} component={MessageBoard} />
+            <Route exact path={["/Reviews"]} component={Reviews} />
+            <Route exact path={["/Resources"]} component={Resources} />
             <Route exact path={"/tasks"} component={Tasks} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/Pets" component={Pets} />
@@ -44,6 +46,7 @@ function App() {
             <Route exact path="/AboutUs" component={AboutUs} />
             <Route exact path="/ContactUs" component={ContactUs} />
             <Route exact path="/PrivacyPolicy" component={PrivacyPolicy} />
+          </div>
         </div>
         <Footer />
       </BrowserRouter>
