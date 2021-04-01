@@ -12,19 +12,8 @@ function NavBar2(){
     const [ showMenu, setShowMenu ] = useState( true )
     // adding const for menu toggle
    
-
-
     const location = useLocation()
-  
-    console.log(`this is authOK`, authOk)
-    console.log(`this is name`, name)
 
-    console.log(`this is showMenu`, showMenu)
-    console.log(`this is location`, location)
-   
-
-
-  
     async function loadUserSession(){
       const { status, userData, message }= await fetchJSON( `/api/users/session` )
       console.log( `[NavBar] attempted to reload session, result(${status}) message(${message})` )
