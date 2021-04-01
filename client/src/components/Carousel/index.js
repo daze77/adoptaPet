@@ -11,12 +11,6 @@ import Cat from '../../assets/images/Cat'
 import Turtle from '../../assets/images/Turtle'
 import Turtle2 from '../../assets/images/Turtle2'
 
-<<<<<<< HEAD:client/src/components/Carousel/index.js
-import Dog from '../../assets/images/Dog'
-import Cat from '../../assets/images/Cat'
-import Turtle from '../../assets/images/Turtle'
-=======
->>>>>>> bhbranch:client/src/components/Carousel/Carousel.js
 
 
 
@@ -43,11 +37,7 @@ function Carousel(){
                     <div class="carousel-item">
                         <Link to="/Resources"><img src={Cat} class="d-block w-100" alt="..." /></Link>
                         <div class="carousel-caption d-none d-md-block">
-<<<<<<< HEAD:client/src/components/Carousel/index.js
                             {/* <h5 id="slide2" ></h5> */}
-=======
-                            {/* <h5>Second slide label</h5> */}
->>>>>>> bhbranch:client/src/components/Carousel/Carousel.js
                             {/* <p>Some representative placeholder content for the second slide.</p> */}
                         </div>
                     </div>
