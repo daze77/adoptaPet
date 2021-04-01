@@ -1,4 +1,4 @@
-.card-img-top {
+.card-img {
     width: 150px;
     height: auto;
     float: left;
@@ -10,4 +10,11 @@
 #content{
 
     padding-top: 15px;
+}
+#shelterCard { 
+    width: 400px;
+    height: 200px;
+    background-color: whitesmoke; 
+
+
 }
