@@ -13,19 +13,8 @@ function NavBar2(){
     const [ showMenu, setShowMenu ] = useState( true )
     // adding const for menu toggle
    
-    const Login = "Login"
-
     const location = useLocation()
-  
-    console.log(`this is authOK`, authOk)
-    console.log(`this is name`, name)
 
-    console.log(`this is showMenu`, showMenu)
-    console.log(`this is location`, location)
-   
-
-
-  
     async function loadUserSession(){
       const { status, userData, message }= await fetchJSON( `/api/users/session` )
       console.log( `[NavBar] attempted to reload session, result(${status}) message(${message})` )
@@ -83,9 +72,9 @@ function NavBar2(){
                                 <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
                             </li>
                             {/* {showMenuItem && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>} */}
-                            <div className={`collapse navbar-collapse ` + (showMenu ? 'show' : '')} id="navbar">
-                              {Login && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>}
-                            </div>
+                            {!name && <div className={`collapse navbar-collapse ` + (showMenu ? 'show' : '')} id="navbar">
+                             <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>
+                            </div>}
 
                         </ul>
 
@@ -98,7 +87,6 @@ function NavBar2(){
                                                 Welcome back <u>{name}</u>
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                                <li><hr class="dropdown-divider"/></li>
                                                 <li class="nav-item"> <NavLink to="/Logout" className="nav-link" activeClassName="active">Logout</NavLink></li>
                                             </ul>
                                         </li>
@@ -113,53 +101,11 @@ function NavBar2(){
             </nav>
 
 
-
-
-
-
-
-
-
-            {/* // Fils code */}
-
-            {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-          <button onClick={() => setShowMenu(!showMenu)} class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div className={`collapse navbar-collapse `+(showMenu ? 'show' : '')} id="navbar">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
-              </li>          
-
-            </ul>
-
-          </div>
-        </nav> */}
-
-
-
-
-
-
-
-
-
-
-
-
         </>
 
     )
     
-    
-
-
-
-
-
+  
 }
 
 

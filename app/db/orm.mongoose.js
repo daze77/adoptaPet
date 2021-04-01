@@ -180,6 +180,57 @@ async function reviewSaveAndList( newReview, subject, organization, name, ownerI
    return reviewList( ownerId, 'Review saved' )
 }
 
+
+async function requisitionInformation( request){
+   if( 
+      !request.name || 
+      !request.lastname || 
+      !request.email || 
+      !request.address1 || 
+      !request.address2 || 
+      !request.city || 
+      !request.postal || 
+      !request.province
+      ){
+      console.log( '[requisition information] invalid request! ', request )
+      return { status: false, message: 'Invalid requisition data' }
+   }
+   const saveRequisitionData = {
+      name: request.name || "",
+      lastname: request.lastname || "",
+      email: request.email || "",
+      address1: request.address1 || "",
+      address2: request.address2 || "",
+      city: request.city || "",
+      postal: request.postal || "",
+      province: request.province || ""
+   }
+   const saveRequisitionInfo = await db.requisition.create( saveRequisitionData )
+   if( !saveRequisitionInfo._id ){
+      return { status: false, message: `Sorry failed creating entry for ${saveRequisitionInfo.name}: ` }
+   }
+
+   return {
+      status: true,
+      message: `Success! ${saveRequisitionInfo.name} was successfully registered`,
+      saveRequisitionData: {
+         id: saveRequisitionInfo._id,
+         name: saveRequisitionInfo.name,
+         email: saveRequisitionInfo.email
+      }
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
 module.exports = {
    userRegister,
    userLogin,
@@ -190,5 +241,6 @@ module.exports = {
    messageSaveAndList,
    messageReplySaveAndList,
    reviewList,
-   reviewSaveAndList
+   reviewSaveAndList,
+   requisitionInformation
 };
