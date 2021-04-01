@@ -12,7 +12,7 @@ function NavBar2(){
     const [ showMenu, setShowMenu ] = useState( true )
     // adding const for menu toggle
    
-    const Login = "Login"
+
 
     const location = useLocation()
   
@@ -82,9 +82,9 @@ function NavBar2(){
                                 <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
                             </li>
                             {/* {showMenuItem && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>} */}
-                            <div className={`collapse navbar-collapse ` + (showMenu ? 'show' : '')} id="navbar">
-                              {Login && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>}
-                            </div>
+                            {!name && <div className={`collapse navbar-collapse ` + (showMenu ? 'show' : '')} id="navbar">
+                             <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>
+                            </div>}
 
                         </ul>
 
