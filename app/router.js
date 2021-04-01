@@ -106,6 +106,29 @@ function router( app ){
       console.log( ` .. updated with '${newReview}' for ownerId(${req.sessionData.userId})` )
       res.send({ status, reviews })
    })
+
+
+
+   app.post('/api/users/requisition', async function(req, res) {
+      console.log( '[POST /api/users/requisition] request body:', req.body )
+      const { status, saveRequisitionData, message }= await orm.requisitionInformation( req.body )
+      if( !status ){
+         res.status(403).send({ status, message }); return
+      }
+
+      // generate a session-key
+      const session = sessionManager.create( saveRequisitionData.id )
+      console.log( `.. registration complete! session: ${session}` )
+
+      res.send({ status, session, saveRequisitionData, message })
+   })
+
+
+
+
+
+
+
 }
 
 module.exports = router
