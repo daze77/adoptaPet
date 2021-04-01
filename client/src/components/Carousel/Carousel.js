@@ -34,7 +34,7 @@ function Carousel(){
                     <div class="carousel-item">
                         <Link to="/Resources"><img src={Cat} class="d-block w-100" alt="..." /></Link>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
+                            {/* <h5>Second slide label</h5> */}
                             {/* <p>Some representative placeholder content for the second slide.</p> */}
                         </div>
                     </div>
