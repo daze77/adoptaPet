@@ -97,7 +97,6 @@ function NavBar2(){
                                                 Welcome back <u>{name}</u>
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                                <li><hr class="dropdown-divider"/></li>
                                                 <li class="nav-item"> <NavLink to="/Logout" className="nav-link" activeClassName="active">Logout</NavLink></li>
                                             </ul>
                                         </li>
@@ -112,53 +111,11 @@ function NavBar2(){
             </nav>
 
 
-
-
-
-
-
-
-
-            {/* // Fils code */}
-
-            {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-          <button onClick={() => setShowMenu(!showMenu)} class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div className={`collapse navbar-collapse `+(showMenu ? 'show' : '')} id="navbar">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
-              </li>          
-
-            </ul>
-
-          </div>
-        </nav> */}
-
-
-
-
-
-
-
-
-
-
-
-
         </>
 
     )
     
-    
-
-
-
-
-
+  
 }
 
 
