@@ -36,7 +36,7 @@ function App() {
         {/* <NavBar /> */}
         <NavBar2 />
         {/* <NavBar /> */}
-        <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2}}>
+        <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2 }}>
           <div class="container" >
 
             <Route exact path={["/", "/index"]} component={HomePage} />
@@ -55,11 +55,7 @@ function App() {
           </div>
         </div>
         <Footer />
-<<<<<<< HEAD
-        <SimpleMap/>
-=======
         {/* <Geo /> */}
->>>>>>> a1f9aa3dcd2bf4c6d23f12670bb00fe262839111
       </BrowserRouter>
     </StoreProvider>
   );
