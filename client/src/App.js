@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import { StoreProvider } from "./util/GlobalStore"
 // import "bootstrap/dist/css/bootstrap.min.css"
-import SimpleMap from './components/SimpleMap/index'
+// import SimpleMap from './components/SimpleMap/index'
 
 // import NavBar from './components/NavBar/NavBar'
 
@@ -55,11 +55,7 @@ function App() {
           </div>
         </div>
         <Footer />
-<<<<<<< HEAD
-        <SimpleMap/>
-=======
-        {/* <Geo /> */}
->>>>>>> a1f9aa3dcd2bf4c6d23f12670bb00fe262839111
+        {/* <SimpleMap/> */}
       </BrowserRouter>
     </StoreProvider>
   );
