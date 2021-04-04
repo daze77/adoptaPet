@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Address from '../Address'
+import Social from '../Social/Social'
+import Address from '../address'
 
 
 
@@ -22,13 +23,15 @@ function TopFooter() {
                             <span><a href="mailto:adoptapet@findmeahome.com"><i class="far fa-envelope"></i></a></span>
                         </div>
                         <div class="col-md-6">
-                            <ul>
+                            <ul class="footerLinks">
                                 <li><Link to='/AboutUs'>ABOUT US</Link></li>
                                 <li><Link to='/PrivacyPolicy'>PRIVACY POLICY</Link></li>
                                 <li><Link to='/ContactUs'>CONTACT US</Link></li>
                             </ul>
+                            <Social />
                         </div>
                     </div>
+
                 </div>
             </div>
 

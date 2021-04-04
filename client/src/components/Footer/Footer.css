@@ -8,7 +8,7 @@
 #footerright{
     background-color: lightgrey;
     color: black;
-    padding: 30px
+    padding: 20px
 }
 
 #footerleftimage{
@@ -51,9 +51,16 @@
 
 li {
     list-style-type: none;
+    margin-left: 5px
 }
 
 a, a:link, a:visited, a:hover, a:active{
     text-decoration: none;
     color: inherit;
 }
+
+
+.footerLinks{
+    padding: 0px;
+}
+
