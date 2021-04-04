@@ -39,13 +39,6 @@ function PetCard() {
 
         <PetProfile /> 
 
-
-
-
-
-
-                
-
     </>
   );
 
