@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import { StoreProvider } from "./util/GlobalStore"
 // import "bootstrap/dist/css/bootstrap.min.css"
-import SimpleMap from './components/SimpleMap/index'
+// import SimpleMap from './components/SimpleMap/index'
 
 // import NavBar from './components/NavBar/NavBar'
 
