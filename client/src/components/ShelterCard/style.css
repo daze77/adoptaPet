@@ -11,9 +11,11 @@
  padding-top: 15px;
 }
 #shelterCard { 
-    width: 400px;
+    width: 350px;
     height: 200px;
     background-color: whitesmoke; 
+    margin-left: 0px;
+    margin-top: 5px;
 
 
 }

@@ -5,9 +5,9 @@ import './style.css'
 function Card(props) {
 
   return (
-    <div class="col gx-5">
+    <div class="col">
       <div className="card mb-3" id="shelterCard">
-        <div className="row gx-5">
+        <div className="row">
           <div className="col-md-4">
             <img src={props.image} className="card-img" alt={props.name} />
           </div>

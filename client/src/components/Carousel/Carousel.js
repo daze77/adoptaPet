@@ -8,7 +8,7 @@ import './Carousel.css'
 
 import Dog from '../../assets/images/Dog'
 import Cat from '../../assets/images/Cat'
-import Turtle from '../../assets/images/Turtle'
+// import Turtle from '../../assets/images/Turtle'
 import Turtle2 from '../../assets/images/Turtle2'
 
 
