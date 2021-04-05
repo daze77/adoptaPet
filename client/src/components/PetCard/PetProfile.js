@@ -1,7 +1,6 @@
 import React from "react";
 
 
-
 function PetProfile(props) {
     console.log(`props on petProfile`, props)
 return (

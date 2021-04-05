@@ -9,14 +9,14 @@
     },
     {
         "id": 2,
-        "name": "Larry",
+        "name": "Bob",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTskeYNmVMeGZdNiI6ahm2z647C65saNNF4Fw&usqp=CAU",
         "occupation": "Fry Cook",
         "location": "A Pineapple Under the Sea"
     },
     {
         "id": 3,
-        "name": "Larry",
+        "name": "Frank",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTskeYNmVMeGZdNiI6ahm2z647C65saNNF4Fw&usqp=CAU",
         "occupation": "Fry Cook",
         "location": "A Pineapple Under the Sea"
