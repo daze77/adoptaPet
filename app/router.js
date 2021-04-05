@@ -148,36 +148,22 @@ function router(app) {
             page,
             limit: 20,
          });
-         // I can console.log it here, it logs in the backend when called
+
          console.log(apiResult.data)
+         res.send(apiResult.data)
          return apiResult.data
       }
-      // This runs the showAnimals function with parameters for what the user wants to search
-      async function waitOnPets() {
-         return await showAnimals('Dog', 'Corgi')
-      }
 
 
+      showAnimals('Cat')
 
       console.log('FETCHED!!')
-      // Here I am trying to send the result back when this endpoint is called.
-      // It should return the pets object, but instead nothing is returned
-
-      // I think it may be because to promise is still unfilled, but I don't know how to make it wait for the result other than what I already have
-      res.send(waitOnPets())
 
 
 
    })
 
 
-
-
-
-
 }
-
-
-
 
 module.exports = router
