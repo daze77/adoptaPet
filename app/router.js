@@ -1,5 +1,8 @@
 const orm = require('./db/orm.mongoose')
 const sessionManager = require('./session-manager')
+var petfinder = require('@petfinder/petfinder-js');
+var client = new petfinder.Client({ apiKey: 'QzQV1dHDBGid9ViQ4PRbgDxi9fAyJxff8vYHInHNRMBgioCBZy', secret: 'k6Tb6XlYMB8evTF1QCuU6pRbzjxFKFopNpanDjh6' })
+
 
 // session checking middleware
 async function authRequired(req, res, next) {
@@ -135,13 +138,34 @@ function router(app) {
    })
 
    app.get('/api/pets', (req, res) => {
-
-      function justObject() {
-         return { message: 'Here are the goods' }
+      //The function that gets the pets object
+      async function showAnimals(animalType, searchBreed) {
+         let page = 1;
+         // The result is stored in apiResult
+         let apiResult = await client.animal.search({
+            type: animalType,
+            breed: searchBreed,
+            page,
+            limit: 20,
+         });
+         // I can console.log it here, it logs in the backend when called
+         console.log(apiResult.data)
+         return apiResult.data
+      }
+      // This runs the showAnimals function with parameters for what the user wants to search
+      async function waitOnPets() {
+         return await showAnimals('Dog', 'Corgi')
       }
 
+
+
       console.log('FETCHED!!')
-      res.send(justObject())
+      // Here I am trying to send the result back when this endpoint is called.
+      // It should return the pets object, but instead nothing is returned
+
+      // I think it may be because to promise is still unfilled, but I don't know how to make it wait for the result other than what I already have
+      res.send(waitOnPets())
+
 
 
    })

@@ -7,13 +7,14 @@ import PetCard from '../components/PetCard/PetCard'
 
 function HomePage() {
     async function loadPets() {
+        // Fetches from app/router.js -- the last endpoint- app.get('api/pets)
         const response = await fetch('/api/pets')
             .then(r => r.json())
         console.log(response)
     }
 
     useEffect(function () {
-        console.log('RUnning load pets')
+        console.log('Running load pets')
         loadPets()
     }, [])
 
