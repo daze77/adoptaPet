@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PetCard from '../components/PetCard/PetCard'
 import Pets from '../pets.json'
 
@@ -8,7 +8,23 @@ import PetProfile from '../components/PetCard/PetProfile'
 
 
 
-function HomePage(){
+function HomePage() {
+    async function loadPets() {
+        // Fetches from app/router.js -- the last endpoint- app.get('api/pets)
+        const response = await fetch('/api/pets')
+            .then(r => r.json())
+        console.log(response)
+    }
+
+    useEffect(function () {
+        console.log('Running load pets')
+        loadPets()
+    }, [])
+
+
+
+
+
 
 
     
@@ -16,7 +32,7 @@ function HomePage(){
    
     return (
         <>
-        <h1> Pets</h1>
+            <h1> Pets</h1>
 
         <div  class="row row-cols-1 row-cols-md-3 g-4"  >
             {Pets.map(petsinfo =>(
