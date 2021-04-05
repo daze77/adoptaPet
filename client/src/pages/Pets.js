@@ -10,6 +10,10 @@ import PetProfile from '../components/PetCard/PetProfile'
 
 function HomePage(){
 
+
+    
+
+   
     return (
         <>
         <h1> Pets</h1>
@@ -28,7 +32,10 @@ function HomePage(){
 
         <PetRequisition />  
 
-        <PetProfile /> 
+        <PetProfile 
+            name={`data-value`}
+           
+        /> 
         </>
     )
 

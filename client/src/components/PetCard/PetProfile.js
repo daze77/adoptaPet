@@ -1,8 +1,8 @@
 import React from "react";
 
 
-function PetProfile(props) {
-    console.log(`props on petProfile`, props)
+function PetProfile(props, {name}) {
+    console.log(`props on petProfile`, {name})
 return (
     <>
     {/* This is the modal for the card click */}
@@ -10,7 +10,7 @@ return (
         <div class="modal-dialog modal-fullscreen-md-down">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{props.name}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{name}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
