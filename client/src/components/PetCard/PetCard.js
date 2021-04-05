@@ -22,7 +22,7 @@ function PetCard() {
 
 
     
-    const petPicked = [{id: id.value, image: image, name: name.value}]
+    const petPicked = [{id: id.value, image: image, name: name}]
     console.log(`huh`, petPicked)
     
     
@@ -35,12 +35,12 @@ function PetCard() {
     
 
         let bill = {
-         
             id:petID,
-            name:name.current.value
+            name:name
         }
+
         console.log(bill)
-        let name2 = name.current.value
+        let name2 = name
         console.log(name2)
         
        
@@ -60,7 +60,7 @@ function PetCard() {
                         <div class="card h-100" id="petcardformat">
                             <img src={petsinfo.image} ref={image} class="card-img-top" alt="..."/>
                                 <div class="card-body">
-                                    <h5 class="card-title" ref={name}>{petsinfo.name} </h5>
+                                    <h5 class="card-title"  ref={name}>{petsinfo.name} </h5>
                                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                 </div>
                                 <div class="card-footer">
