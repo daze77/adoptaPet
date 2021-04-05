@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "How to Choose the Right Dog Food",
+        "link": "https://www.petsmart.ca/learning-center/dog-care/what-should-i-feed-my-dog/A0209.html?fdid=dog"
+    },
+    {
+        "id": 2,
+        "title": "How to Train a Kitten",
+        "link": "https://www.purina.ca/articles/kitten/training/training-my-new-kitten"
+    },
+    {
+        "id": 3,
+        "title": "Places to Look For a New Puppy",
+        "link": "https://www.hillspet.com/dog-care/new-pet-parent/where-to-get-a-puppy"
+    },
+    {
+        "id": 4,
+        "title": "Helping a New Dog's Anxiety after Coming Home",
+        "link": "https://www.hillspet.com/dog-care/new-pet-parent/new-dog-anxiety-symptoms-after-coming-home"
+    },
+    {
+        "id": 5,
+        "title": "What to Expect When Adopting and Adult Cat",
+        "link": "https://www.hillspet.com/cat-care/new-pet-parent/adopting-an-adult-cat"
+    },
+    {
+        "id": 6,
+        "title": "Do Hypoallergenic Cat Breeds Exist?",
+        "link": "https://www.hillspet.com/cat-care/new-pet-parent/hypoallergenic-and-low-shedding-cat-breeds"
+    },
+    {
+        "id": 7,
+        "title": "How to Housetrain an Adult Dog",
+        "link": "https://douglasfeedandpetsupply.com/blog/76485/how-to-housetrain-an-adult-dog"
+    }
+]

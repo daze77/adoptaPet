@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import fetchJSON from '../util/API'
 
 
@@ -50,44 +48,43 @@ function Reviews() {
   }, [])
 
 
-    return (
-      <div>
-        <h1>Reviews</h1>
-        <Form>
-          <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Name</Form.Label>
-            <Form.Control ref={inputName} type="name" placeholder="" />
-          </Form.Group>
-          <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Organization</Form.Label>
-            <Form.Control ref={inputOrganization} type="organization" placeholder="" />
-          </Form.Group>
-          <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Subject</Form.Label>
-            <Form.Control ref={inputSubject} type="subject" placeholder="" />
-          </Form.Group>
-          <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Review</Form.Label>
-            <Form.Control ref={inputReview} as="textarea" rows={3} />
-          </Form.Group>
-          <Button onClick={reviewSubmit} variant="primary">Submit</Button>
-        </Form>
-        <br />
-        {allReviews.map(userReview => (
-          <div>
-            <Card>
-              <Card.Body>
-                <Card.Title>{userReview.subject}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{userReview.organization}</Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">{userReview.name}</Card.Subtitle>
-                <Card.Text>{userReview.review}</Card.Text>
-              </Card.Body>
-            </Card>
+  return (
+    <div>
+      <h1>Reviews</h1>
+      <div className="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input ref={inputName} type="name" className="form-control" id="exampleFormControlInput1" placeholder="" />
+        <div className="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Organization</label>
+          <input ref={inputOrganization} type="organization" className="form-control" id="exampleFormControlInput1" placeholder="" />
+          <div className="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Subject</label>
+            <input ref={inputSubject} type="subject" className="form-control" id="exampleFormControlInput1" placeholder="" />
+            <div className="mb-3">
+              <label for="exampleFormControlTextarea1" className="form-label">Review</label>
+              <textarea ref={inputReview} class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <button onClick={reviewSubmit} type="button" className="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      {allReviews.map(userReview => (
+        <div className="card mb-2">
+          <div className="card-body">
+            <h5 className="card-title">{userReview.subject}</h5>
+            <h6 className="card-subtitle mb-2 text-muted">{userReview.organization}</h6>
+            <h6 className="card-subtitle mb-2 text-muted">{userReview.name}</h6>
+            <p className="card-text">{userReview.review}</p>
             <br />
           </div>
-        ))}
-      </div>
-    )
+        </div>
+      )
+      )
+      }
+    </div>
+  )
 }
 
 export default Reviews
