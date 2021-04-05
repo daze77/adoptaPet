@@ -80,7 +80,6 @@ function NavBar2(){
                             </div>}
 
                         </ul>
-
                         {name && 
                             <div class="d-flex">
                                 <div class="mx-3">
@@ -97,7 +96,6 @@ function NavBar2(){
                                 </div>
                             </div>
                         }
-
                         <br/>
                     </div>
                 </div>

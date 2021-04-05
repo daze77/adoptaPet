@@ -182,28 +182,28 @@ async function reviewSaveAndList( newReview, subject, organization, name, ownerI
 
 
 async function requisitionInformation( request){
-   if( 
-      !request.name || 
-      !request.lastname || 
-      !request.email || 
-      !request.address1 || 
-      !request.address2 || 
-      !request.city || 
-      !request.postal || 
+   if(
+      !request.name ||
+      !request.lastname ||
+      !request.email ||
+      !request.address1 ||
+      !request.address2 ||
+      !request.city ||
+      !request.postal ||
       !request.province
-      ){
+   ){
       console.log( '[requisition information] invalid request! ', request )
       return { status: false, message: 'Invalid requisition data' }
    }
    const saveRequisitionData = {
-      name: request.name || "",
-      lastname: request.lastname || "",
-      email: request.email || "",
-      address1: request.address1 || "",
-      address2: request.address2 || "",
-      city: request.city || "",
-      postal: request.postal || "",
-      province: request.province || ""
+      name: request.name || '',
+      lastname: request.lastname || '',
+      email: request.email || '',
+      address1: request.address1 || '',
+      address2: request.address2 || '',
+      city: request.city || '',
+      postal: request.postal || '',
+      province: request.province || ''
    }
    const saveRequisitionInfo = await db.requisition.create( saveRequisitionData )
    if( !saveRequisitionInfo._id ){

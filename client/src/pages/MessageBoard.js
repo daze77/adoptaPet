@@ -1,11 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
-import ListGroup from 'react-bootstrap/ListGroup'
-import ListGroupItem from 'react-bootstrap/ListGroupItem'
-import Modal from 'react-bootstrap/Modal'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import fetchJSON from '../util/API'
 
 
@@ -19,6 +13,7 @@ function MessageBoard() {
   const buttonValue = useRef()
 
   const [allMessages, setAllMessages] = useState([])
+  // eslint-disable-next-line no-unused-vars
   const [show, setShow] = useState(false);
   const [messageID, setMessageID] = useState()
 
@@ -98,6 +93,7 @@ function MessageBoard() {
     inputReplyName.current.value = ''
     inputReplySubject.current.value = ''
     inputReplyMessage.current.value = ''
+    setShow(false)
     try {
       await fetchJSON('/api/messagereply', 'post', repliedMessage)
       console.log("Reply saved")
@@ -106,8 +102,6 @@ function MessageBoard() {
     catch (error) {
       alert(error)
     }
-
-    setShow(false)
   }
 
   useEffect(function () {
@@ -117,66 +111,100 @@ function MessageBoard() {
   return (
     <div>
       <h1>Message Board</h1>
-      <Form>
-        <Form.Group controlId="exampleForm.ControlInput1">
-          <Form.Label>Name</Form.Label>
-          <Form.Control ref={inputName} type="name" placeholder="" />
-        </Form.Group>
-        <Form.Group controlId="exampleForm.ControlInput1">
-          <Form.Label>Subject</Form.Label>
-          <Form.Control ref={inputSubject} type="subject" placeholder="" />
-        </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Message</Form.Label>
-          <Form.Control ref={inputMessage} as="textarea" rows={3} />
-        </Form.Group>
-        <Button onClick={messageSave} variant="primary">Submit</Button>
-      </Form>
-      <br />
-      {allMessages.map(userMessage => (
-        <div>
-          <Card key={userMessage._id}>
-            <Card.Body>
-              <Card.Title>{userMessage.subject}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">{userMessage.name}</Card.Subtitle>
-              <Card.Text>{userMessage.message}</Card.Text>
-              <Button onClick={handleReply} className="float-end" variant="primary" value={userMessage._id} ref={buttonValue} >Reply</Button>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              {userMessage.reply.map(reply => <ListGroupItem>
-                <u>{reply.subject}</u> by <b>{reply.name}</b>: {reply.message}
-              </ListGroupItem>)}
-            </ListGroup>
-          </Card>
+      <div className="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input ref={inputName} type="name" className="form-control" id="exampleFormControlInput1" placeholder="" />
+        <div className="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Subject</label>
+          <input ref={inputSubject} type="subject" className="form-control" id="exampleFormControlInput1" placeholder="" />
+          <div className="mb-3">
+            <label for="exampleFormControlTextarea1" className="form-label">Message</label>
+            <textarea ref={inputMessage} class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <button onClick={messageSave} type="button" className="btn btn-primary">Submit</button>
+          </div>
           <br />
+          {allMessages.map(userMessage => (
+            <div className="card mb-2">
+              <div className="card-body">
+                <h5 className="card-title">{userMessage.subject}</h5>
+                <h6 className="card-subtitle mb-2 text-muted">{userMessage.name}</h6>
+                <p className="card-text">{userMessage.message}</p>
+                <button onClick={handleReply} type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="btn btn-primary" value={userMessage._id} ref={buttonValue}>Reply</button>
+                <br />
+
+                <ul className="list-group mt-2">
+
+                  {userMessage.reply.map(reply => (
+                    <li className="list-group-item">
+                      <u>{reply.subject}</u> by <b>{reply.name}</b>: {reply.message}
+                    </li>
+                  )
+                    //  by {reply.name}: {reply.message})
+                  )}
+
+                </ul>
+              </div>
+            </div>
+          ))}
+
+          {/* <div className="modal" tabindex="-1" >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title">Message Reply</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                  <p>
+                    <div className="mb-3">
+                      <label for="exampleFormControlInput1" className="form-label">Name</label>
+                      <input type="name" className="form-control" id="exampleFormControlInput1" placeholder="" />
+                      <div className="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Subject</label>
+                        <input type="subject" className="form-control" id="exampleFormControlInput1" placeholder="" />
+                        <div className="mb-3">
+                          <label for="exampleFormControlTextarea1" className="form-label"></label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Message</textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+                <div className="modal-footer">
+                  <button onClick={addReply} type="button" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div> */}
+          <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">Message Reply</h5>
+                  <button onClick={handleClose} type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                  <div className="mb-3">
+                    <label for="exampleFormControlInput1" className="form-label">Name</label>
+                    <input ref={inputReplyName} type="name" className="form-control" id="exampleFormControlInput1" placeholder="" />
+                    <div className="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label">Subject</label>
+                      <input ref={inputReplySubject} type="subject" className="form-control" id="exampleFormControlInput1" placeholder="" />
+                      <div className="mb-3">
+                        <label for="exampleFormControlTextarea1" className="form-label">Message</label>
+                        <textarea ref={inputReplyMessage} class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button onClick={addReply} type="button" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      ))}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Message Reply</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Name</Form.Label>
-              <Form.Control ref={inputReplyName} type="name" placeholder="" />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlInput1">
-              <Form.Label>Subject</Form.Label>
-              <Form.Control ref={inputReplySubject} type="subject" placeholder="" />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Message</Form.Label>
-              <Form.Control ref={inputReplyMessage} as="textarea" rows={3} />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={addReply}>
-            Submit
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      </div>
     </div>
   )
 }
