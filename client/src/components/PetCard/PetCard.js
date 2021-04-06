@@ -1,11 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 
 import PickMeBtn from './PickMeBtn'
-import PetRequisition from './PetRequisition'
-import PetProfile from './PetProfile'
-import './PetCard.css'
 
-import Pets from '../../pets.json'
+import './PetCard.css'
 
 
 function PetCard() {
@@ -48,6 +45,27 @@ function PetCard() {
 
         </>
     );
+
+
+function PetCard(props) {
+  return (
+    <>           
+        <div key={props.id} class="col" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-value={props.index} onClick={props.pictureClick} >
+            <div class="card h-100" id="petcardformat">
+                <img src={props.image}  class="card-img-top" alt={props.name}/>
+                <div class="card-body">
+                    <h5 class="card-title" >{props.name} </h5>
+                    <p class="card-text">{props.description}</p>
+                </div>
+                <div class="card-footer">
+                    <PickMeBtn />
+                </div>
+            </div>
+        </div>
+     
+    </>
+  );
+
 
 }
 
