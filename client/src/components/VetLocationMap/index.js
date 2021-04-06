@@ -2,26 +2,24 @@ import React, { useRef } from 'react'
 import "./style.css"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-const LocationContainer = (props) => {
+const VetLocationMap = (props) => {
 
   return (
     <div className="map-container" id="mapinfo">
       <MapContainer
         center={[43.6532, -79.3832]}
-        zoom={13}
-      >
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        zoom={13} >
+        <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {props.shelters.map(shelter => (
+        {props.vets.map(vet => (
           <Marker
-            position={[ shelter.latitude , shelter.longitude ]}>
-            <Popup>{shelter.name}</Popup>
+            position={[ vet.latitude , vet.longitude]}>
+            <Popup>{vet.name}</Popup>
           </Marker>))};
-  </MapContainer>
+      </MapContainer>
     </div >
   );
 }
 
-export default LocationContainer
+export default VetLocationMap
