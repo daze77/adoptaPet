@@ -150,7 +150,7 @@ function router(app) {
          });
 
          console.log(apiResult.data)
-         res.send(apiResult.data)
+         res.send(apiResult.data.animals)
          return apiResult.data
       }
 
