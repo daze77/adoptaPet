@@ -2,6 +2,7 @@ import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import { StoreProvider } from "./util/GlobalStore"
 
+
 //pages
 import NavBar2 from './components/NavBar/NavBar2'
 import Footer from "./components/Footer/Footer"
