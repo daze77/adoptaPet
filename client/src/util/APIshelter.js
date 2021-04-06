@@ -15,7 +15,9 @@ async function getStuff() {
         name: shelter.name,
         address: shelter.location.display_address.join(","),
         url: shelter.url,
-        image: shelter.image_url
+        image: shelter.image_url,
+        latitude: shelter.coordinates.latitude,
+        longitude: shelter.coordinates.longitude
         };
     })
 }

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import VetCard from "../components/VetCard";
 import vetapi from "../util/adoptionapi/vetapi";
 import ScrollContainer from "../components/ScrollContainer";
-import LocationContainer from "../components/LocationContainer";
-import { Marker } from "react-leaflet";
+// import LocationContainer from "../components/LocationContainer";
+// import { Marker } from "react-leaflet";
 
 
 

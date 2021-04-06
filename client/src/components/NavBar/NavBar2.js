@@ -62,8 +62,8 @@ function NavBar2(){
                             <li class="nav-item"> <NavLink to="/MessageBoards" className="nav-link" activeClassName="active">
                                 Message Board</NavLink>
                             </li>
-                            <li class="nav-item"> <NavLink to="/Resources" className="nav-link" activeClassName="active">
-                                Resources</NavLink>
+                            <li class="nav-item"> <NavLink to="/FindAShelter" className="nav-link" activeClassName="active">
+                                Find a Shelter</NavLink>
                             </li>
                             <li class="nav-item"> <NavLink to="/FindAVet" className="nav-link" activeClassName="active">
                                 Find a Vet</NavLink>

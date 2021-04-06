@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import fetchJSON from '../util/API'
 
 

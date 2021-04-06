@@ -13,7 +13,10 @@ async function getStuff() {
         name: vet.name,
         address: vet.location.display_address.join(","),
         url: vet.url,
-        image: vet.image_url
+        image: vet.image_url,
+        latitude: vet.coordinates.latitude,
+        longitude: vet.coordinates.longitude
+
         };
     })
 }

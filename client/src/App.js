@@ -1,15 +1,10 @@
 import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
 import { StoreProvider } from "./util/GlobalStore"
-// import "bootstrap/dist/css/bootstrap.min.css"
-// import SimpleMap from './components/SimpleMap/index'
 
-// import NavBar from './components/NavBar/NavBar'
-
+//pages
 import NavBar2 from './components/NavBar/NavBar2'
 import Footer from "./components/Footer/Footer"
-// import AlertBar from "./components/AlertBar"
-// pages
 import Tasks from "./pages/Tasks"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
@@ -17,7 +12,7 @@ import Logout from "./pages/Logout"
 import HomePage from "./pages/HomePage"
 import Reviews from './pages/Reviews'
 import FindAVet from './pages/FindAVet'
-import Resources from './pages/Resources'
+import FindAShelter from './pages/FindAShelter'
 import MessageBoard from './pages/MessageBoard'
 import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
@@ -42,7 +37,7 @@ function App() {
             <Route exact path={["/", "/index"]} component={HomePage} />
             <Route exact path={["/MessageBoards"]} component={MessageBoard} />
             <Route exact path={["/Reviews"]} component={Reviews} />
-            <Route exact path={["/Resources"]} component={Resources} />
+            <Route exact path={["/FindAShelter"]} component={FindAShelter} />
             <Route exact path={["/FindAVet"]} component={FindAVet} />
             <Route exact path={"/tasks"} component={Tasks} />
             <Route exact path="/register" component={Register} />
