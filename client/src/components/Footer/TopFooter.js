@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Social from '../Social/Social'
-import Address from '../address'
+import Address from '../Address'
 
 
 
