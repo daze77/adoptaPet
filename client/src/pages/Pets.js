@@ -12,6 +12,27 @@ function HomePage(PetsInformation) {
     const[image,setImage]=useState('')
     const[petname,setPetName]=useState('')
     const[petDescription,setPetDescription]=useState('')
+    const[petType,setPetType]=useState('')
+    const[petId,setPetID]=useState('')
+    const[petBreeds,setPetBreeds]=useState('')
+    const[petGender,setPetGender]=useState('')
+    const[petAttributestrained,setPetAttributesht]=useState()
+    const[petAttributesdeclawed,setPetAttributesdc]=useState()
+    const[petAttributesspayed,setPetAttributesspayed]=useState()
+    const[petAttributesshots,setPetAttributesshots]=useState()
+    const[publishedAt,setPublishedAt]=useState()
+
+
+
+
+    console.log(petAttributesdeclawed)
+
+
+
+
+
+
+
 
 
 
@@ -39,6 +60,57 @@ function pictureClick(id){
     setImage(petDetails[0].primary_photo_cropped.small)
     setPetName((petDetails[0].name))
     setPetDescription((petDetails[0].description))
+    setPetType((petDetails[0].type))
+    setPetID((petDetails[0].id))
+    setPetBreeds((petDetails[0].breeds.primary))
+    setPetGender((petDetails[0].gender))
+    let a = petDetails[0].attributes.declawed
+    let b = petDetails[0].attributes.house_trained
+    let c = petDetails[0].attributes.spayed_neutered
+    let d = petDetails[0].attributes.shots_current
+    let e = petDetails[0].published_at
+
+    const formatDate = (e) => {
+        const options = { year: "numeric", month: "long", day: "numeric" }
+        return new Date(e).toLocaleDateString(undefined, options)
+      }
+
+
+    setPublishedAt((Date))
+
+
+
+    if(a){
+        setPetAttributesdc("Yes")
+    } else if(!a){
+        setPetAttributesdc("No")
+    } else {setPetAttributesdc("n/a")}
+
+    if(b){
+        setPetAttributesht("Yes")
+    } else if(!b){
+        setPetAttributesht("No")
+    } else {setPetAttributesht("n/a")}
+
+    if(c){
+        setPetAttributesspayed("Yes")
+    } else if(!c){
+        setPetAttributesspayed("No")
+    } else {setPetAttributesspayed("n/a")}
+
+    if(d){
+        setPetAttributesshots("Yes")
+    } else if(!d){
+        setPetAttributesshots("No")
+    } else {setPetAttributesshots("n/a")}
+
+
+
+
+
+
+
+
 
 
 
@@ -80,6 +152,18 @@ function pictureClick(id){
             image={image}
             name={petname}
             description={petDescription}
+            type={petType}
+            id={petId}
+            breeds={petBreeds}
+            gender={petGender}
+            housetrained={petAttributestrained}
+            declawed={petAttributesdeclawed}
+            spayed={petAttributesspayed}
+            shots={petAttributesshots}
+            date={publishedAt}
+
+
+
             
         /> 
     
