@@ -6,7 +6,10 @@
   "directories": {
     "doc": "docs"
   },
+  "homepage": "https://daze77.github.io/adoptaPet-Test/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
@@ -21,6 +24,7 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "gh-pages": "^3.1.0",
     "mongoose": "^5.12.2",
     "uuid": "^8.3.2"
   },
