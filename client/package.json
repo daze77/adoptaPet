@@ -2,6 +2,11 @@
   "name": "adoptapet",
   "version": "0.1.0",
   "private": true,
+  "discription": "a really cool app",
+  "engines":{
+    "node": "v14.15.4"
+  },
+  
  
   "homepage": "https://daze77.github.io/adoptaPet-Test/",
   "dependencies": {
