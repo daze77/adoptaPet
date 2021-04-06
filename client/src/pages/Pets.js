@@ -35,14 +35,7 @@ function HomePage(PetsInformation) {
 
 
     async function loadPets(animal, breed) {
-        // Fetches from app/router.js -- the last endpoint- app.get('api/pets)
-        // const response = await fetch('/api/pets', {
-        //     headers: {
-        //         'type': animal,
-        //         'breed': breed
-        //     }
-        // })
-        //     .then(r => r.json())
+        console.log('You clicked', animal)
         const response = await petAPI(animal, breed)
         console.log(`these are the pets from petFinder:`, response)
         const filter = response.filter(item => item.primary_photo_cropped != null)
@@ -125,11 +118,11 @@ function HomePage(PetsInformation) {
 
     return (
         <>
-            <h1> Pets</h1>
-
-            <PetFilter
-            //  dogFunc={loadPets('Dog', '')} catFunc={loadPets('Cat', '')} otherFunc={loadPets('Scales, Fins & Other', '')} 
+            <h1> Pets</h1>  <PetFilter
+                dogFunc={() => loadPets('Dog', '')} catFunc={() => loadPets('Cat', '')} otherFunc={() => loadPets('Scales, Fins & Other', '')}
             />
+
+
 
             <div class="row row-cols-1 row-cols-md-3 g-4"  >
                 {pets.map(petsinfo => (

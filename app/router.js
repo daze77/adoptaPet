@@ -1,7 +1,7 @@
 const orm = require('./db/orm.mongoose')
 const sessionManager = require('./session-manager')
 var petfinder = require('@petfinder/petfinder-js');
-var client = new petfinder.Client({ apiKey: 'QzQV1dHDBGid9ViQ4PRbgDxi9fAyJxff8vYHInHNRMBgioCBZy', secret: 'k6Tb6XlYMB8evTF1QCuU6pRbzjxFKFopNpanDjh6' })
+var client = new petfinder.Client({ apiKey: 'DgoYHAZ8wJO0sjjbvvSp6tZO8yXYb9Rrjo0yIg7wKkXM2P9sbC', secret: 'GHhhiwex8rmRZl3bAfEUx0pIk4GgM0yI0OOKhszr' })
 
 
 // session checking middleware
@@ -146,7 +146,7 @@ function router(app) {
             type: animalType,
             breed: searchBreed,
             page,
-            limit: 20,
+            limit: 50,
          });
 
          // console.log(apiResult.data)
