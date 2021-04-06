@@ -149,13 +149,14 @@ function router(app) {
             limit: 20,
          });
 
-         console.log(apiResult.data)
+         // console.log(apiResult.data)
          res.send(apiResult.data.animals)
          return apiResult.data
       }
+      // console.log(req.headers.type, req.headers.breed)
 
 
-      showAnimals('Cat')
+      showAnimals(req.headers.type, req.headers.breed)
 
       console.log('FETCHED!!')
 
