@@ -7,8 +7,6 @@ import PetFilter from '../components/PetFilter/PetFilter'
 import petAPI from '../util/petAPI/petAPI'
 
 
-
-
 function HomePage(PetsInformation) {
     const [pets, setPets] = useState([])
     const [image, setImage] = useState('')
@@ -23,15 +21,6 @@ function HomePage(PetsInformation) {
     const [petAttributesspayed, setPetAttributesspayed] = useState()
     const [petAttributesshots, setPetAttributesshots] = useState()
     const [publishedAt, setPublishedAt] = useState()
-
-
-
-
-
-    console.log(petAttributesdeclawed)
-
-
-
 
 
     async function loadPets(animal, breed) {
@@ -64,12 +53,12 @@ function HomePage(PetsInformation) {
         let b = petDetails[0].attributes.house_trained
         let c = petDetails[0].attributes.spayed_neutered
         let d = petDetails[0].attributes.shots_current
-        let e = petDetails[0].published_at
+        // let e = petDetails[0].published_at
 
-        const formatDate = (e) => {
-            const options = { year: "numeric", month: "long", day: "numeric" }
-            return new Date(e).toLocaleDateString(undefined, options)
-        }
+        // const formatDate = (e) => {
+        //     const options = { year: "numeric", month: "long", day: "numeric" }
+        //     return new Date(e).toLocaleDateString(undefined, options)
+        // }
 
 
         setPublishedAt((Date))
@@ -99,20 +88,6 @@ function HomePage(PetsInformation) {
         } else if (!d) {
             setPetAttributesshots("No")
         } else { setPetAttributesshots("n/a") }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
@@ -162,17 +137,10 @@ function HomePage(PetsInformation) {
                 shots={petAttributesshots}
                 date={publishedAt}
 
-
-
-
             />
 
         </>
     )
-
-
-
-
 }
 
 

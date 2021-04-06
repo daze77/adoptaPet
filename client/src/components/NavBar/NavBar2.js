@@ -3,7 +3,6 @@ import { Redirect, NavLink, useLocation  } from "react-router-dom"
 import { useStoreContext } from "../../util/GlobalStore"
 import fetchJSON from '../../util/API'
 import Paws from '../../assets/images/paws.png'
-import "./style.css"
 
 let timeout
 

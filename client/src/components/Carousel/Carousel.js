@@ -1,18 +1,12 @@
 import React from 'react'
 import { Link  } from "react-router-dom"
-import "./style.css"
 
 //Import CSS
 import './Carousel.css'
 
-
 import Dog from '../../assets/images/Dog'
 import Cat from '../../assets/images/Cat'
-// import Turtle from '../../assets/images/Turtle'
 import Turtle2 from '../../assets/images/Turtle2'
-
-
-
 
 
 function Carousel(){
@@ -58,19 +52,8 @@ function Carousel(){
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-
-
-
-
-
-
-
-
         </>
     )
-
-
-
 }
 
 
