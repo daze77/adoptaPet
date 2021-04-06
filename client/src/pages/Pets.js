@@ -54,7 +54,7 @@ function HomePage(PetsInformation) {
 
     useEffect(function () {
         console.log('Running load pets')
-        loadPets('Dog', 'Dogue de Bordeaux')
+        loadPets('Dog', 'Dutch Shepherd')
     }, [])
 
     function pictureClick(id) {
@@ -127,7 +127,9 @@ function HomePage(PetsInformation) {
         <>
             <h1> Pets</h1>
 
-            <PetFilter />
+            <PetFilter
+            //  dogFunc={loadPets('Dog', '')} catFunc={loadPets('Cat', '')} otherFunc={loadPets('Scales, Fins & Other', '')} 
+            />
 
             <div class="row row-cols-1 row-cols-md-3 g-4"  >
                 {pets.map(petsinfo => (
