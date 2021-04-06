@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/adoptaPet-Test/static/css/main.08a99ca3.chunk.css",
+    "main.js": "/adoptaPet-Test/static/js/main.82f2cdad.chunk.js",
+    "main.js.map": "/adoptaPet-Test/static/js/main.82f2cdad.chunk.js.map",
+    "runtime-main.js": "/adoptaPet-Test/static/js/runtime-main.ea07fc5c.js",
+    "runtime-main.js.map": "/adoptaPet-Test/static/js/runtime-main.ea07fc5c.js.map",
+    "static/js/2.adaa775e.chunk.js": "/adoptaPet-Test/static/js/2.adaa775e.chunk.js",
+    "static/js/2.adaa775e.chunk.js.map": "/adoptaPet-Test/static/js/2.adaa775e.chunk.js.map",
+    "index.html": "/adoptaPet-Test/index.html",
+    "static/css/main.08a99ca3.chunk.css.map": "/adoptaPet-Test/static/css/main.08a99ca3.chunk.css.map",
+    "static/js/2.adaa775e.chunk.js.LICENSE.txt": "/adoptaPet-Test/static/js/2.adaa775e.chunk.js.LICENSE.txt",
+    "static/media/Background3.7550897e.jpeg": "/adoptaPet-Test/static/media/Background3.7550897e.jpeg",
+    "static/media/Cat.618fef0f.bin": "/adoptaPet-Test/static/media/Cat.618fef0f.bin",
+    "static/media/Dog.835df067.bin": "/adoptaPet-Test/static/media/Dog.835df067.bin",
+    "static/media/Turtle2.2bd44fa1.bin": "/adoptaPet-Test/static/media/Turtle2.2bd44fa1.bin",
+    "static/media/paws.62c73058.png": "/adoptaPet-Test/static/media/paws.62c73058.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea07fc5c.js",
+    "static/js/2.adaa775e.chunk.js",
+    "static/css/main.08a99ca3.chunk.css",
+    "static/js/main.82f2cdad.chunk.js"
+  ]
+}
