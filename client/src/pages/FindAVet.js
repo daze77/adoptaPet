@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react";
 import VetCard from "../components/VetCard";
 import vetapi from "../util/adoptionapi/vetapi";
 import ScrollContainer from "../components/ScrollContainer";
-// import LocationContainer from "../components/LocationContainer";
-// import { Marker } from "react-leaflet";
-
-
+import VetLocationMap from "../components/VetLocationMap";
 
 function FindAVet() {
   const [vets, setVets] = useState([])
-
 
   function getVets() {
     vetapi().then(vets => {
@@ -26,12 +22,10 @@ function FindAVet() {
     <div id="mainContainer">
       <h1>Vets in Toronto</h1>
 
-      {/* <LocationContainer>
-        <div className="row gx-3">
-          <p>Map goes here</p>
-
+       <VetLocationMap vets={vets}>
+        <div id="mapinfo">
         </div>
-      </LocationContainer> */}
+      </VetLocationMap>
       <ScrollContainer>
         <div class="row row-cols-1 row-cols-md-3 g-2 gx-3"  >
           {vets.map(vet => (
