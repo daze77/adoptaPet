@@ -5,7 +5,7 @@ function AdviceCard(props) {
 
     return (
       <div class="col">
-        <div className="card mb-3" id="AdviceCard">
+        <div className="card mb-3" id=" advicecardformat">
           <div className="row">
             <div className="col-md-4">
               <img src={props.image} className="card-img" alt={props.name} />
