@@ -1,15 +1,15 @@
 #slide1 {
-    font-size: 26pt;
+    font-size: 5.5vw;
     font-weight: bold;
     color: white;
   }
   #slide2 {
-    font-size: 26pt;
+    font-size: 5.5vw;
     font-weight: bold;
     color: palevioletred;
   }
   #slide3 {
-    font-size: 26pt;
+    font-size: 5.5vw;
     font-weight: bold;
     color: green;
     
@@ -17,7 +17,7 @@
   .carousel-caption{
       position: absolute;
       font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      top:20px;
+      top:0px;
   }
 
  
