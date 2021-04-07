@@ -27,7 +27,7 @@ function FindAVet() {
         </div>
       </VetLocationMap>
       <ScrollContainer>
-        <div class="row row-cols-1 row-cols-md-3 g-2 gx-3"  >
+        <div class="row row-cols-1 row-cols-xl-3 g-2 gx-3"  >
           {vets.map(vet => (
             <VetCard
               id={vet.id}
