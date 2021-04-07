@@ -3,8 +3,8 @@
   .list-inline li {
     display: inline-block;
     padding-right: 5px;
-    padding-left: 5px;
-    margin-bottom: 10px;
+    padding-left: 0px;
+    margin-bottom: 0px;
   }
   
   .list-unstyled {
