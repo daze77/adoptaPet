@@ -10,7 +10,7 @@ function PrivacyPolicy(){
         <>
         <h2> PRIVACY POLICY</h2>
             <br/>
-            <ul style={{padding: "0px"}}>
+            <ul >
                 <li> 
                     <strong>General</strong>.
                     
