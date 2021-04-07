@@ -15,7 +15,7 @@ class Articles extends Component {
             <div className="col ">
               <div key = {advice.id} className="card h-100 mb-3 advicecardformat" id="advicecardformat" >
                 <img src={advice.image} className="card-img-top" id="adviceImage" alt="advice article"/>
-                <div class="overlay">Click me for Article</div>
+                <div class="overlay centered">Click me for Article</div>
                 <div className="card-body">
                   <p className="card-text"><strong><i>{advice.title}</i></strong> by {advice.source}</p>
                 </div>
