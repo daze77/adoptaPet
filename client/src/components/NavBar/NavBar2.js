@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect, NavLink, useLocation  } from "react-router-dom"
+import {  NavLink, useLocation  } from "react-router-dom"
 import { useStoreContext } from "../../util/GlobalStore"
 import fetchJSON from '../../util/API'
 import Paws from '../../assets/images/paws.png'
-import "./style.css"
 
 let timeout
 
@@ -74,7 +73,7 @@ function NavBar2(){
                             <li className="nav-item">
                                 <NavLink to="/advice" className="nav-link" activeClassName="active">Advice</NavLink>
                             </li>
-                            {/* {showMenuItem && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>} */}
+
                             {!name && <div className={`collapse navbar-collapse ` + (showMenu ? 'show' : '')} id="navbar">
                              <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>
                             </div>}
