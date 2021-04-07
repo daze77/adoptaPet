@@ -72,7 +72,7 @@ function NavBar2(){
                                 Reviews</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/tasks" className="nav-link" activeClassName="active">Tasks</NavLink>
+                                <NavLink to="/advice" className="nav-link" activeClassName="active">Advice</NavLink>
                             </li>
                             {/* {showMenuItem && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>} */}
                             {!name && <div className={`collapse navbar-collapse ` + (showMenu ? 'show' : '')} id="navbar">

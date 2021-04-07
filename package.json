@@ -6,7 +6,9 @@
   "directories": {
     "doc": "docs"
   },
+
   "scripts": {
+
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
