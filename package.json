@@ -9,11 +9,10 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "start:prod":"node server.js",
+    "start:prod": "node server.js",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build"
-    
   },
   "author": "Filipe Laborde",
   "license": "MIT",
