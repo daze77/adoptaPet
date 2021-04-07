@@ -28,22 +28,22 @@ function Carousel(){
                 </div>
                 <div class="carousel-inner ">
                     <div class="carousel-item active">
-                        <Link to="/Resources"><img src={Dog} class="d-block w-100" alt="..." /></Link>
-                        <div class="carousel-caption d-none d-md-block">
+                        <Link to="/Pets"><img src={Dog} class="d-block w-100" alt="..." /></Link>
+                        <div class="carousel-caption ">
                              <h5 id="slide1">We are real happy to see you</h5>
                             {/* <p>Some representative placeholder content for the first slide.</p> */} 
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <Link to="/Resources"><img src={Cat} class="d-block w-100" alt="..." /></Link>
-                        <div class="carousel-caption d-none d-md-block">
+                        <Link to="/Pets"><img src={Cat} class="d-block w-100" alt="..." /></Link>
+                        <div class="carousel-caption  ">
                             <h5 id="slide2" >Hmmmm</h5>
                             {/* <p>Some representative placeholder content for the second slide.</p> */}
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <Link to="/Resources"><img src={Turtle2} class="d-block w-100" alt="..." /></Link>
-                        <div class="carousel-caption d-none d-md-block">
+                        <Link to="/Pets"><img src={Turtle2} class="d-block w-100" alt="..." /></Link>
+                        <div class="carousel-caption ">
                              <h5 id="slide3" >Looking for a new best friend?</h5>
                             {/* <p>Some representative placeholder content for the third slide.</p> */} 
                         </div>
