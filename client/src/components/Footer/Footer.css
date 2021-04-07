@@ -64,6 +64,10 @@ a, a:link, a:visited, a:hover, a:active{
     padding: 0px;
 }
 
+/* .footerLinks li{
+    padding: 5px, 0px
+} */
+
 
 #socialposition{
     position: relative;
@@ -75,4 +79,6 @@ a, a:link, a:visited, a:hover, a:active{
     padding-top: 5px;
     padding-bottom: 5px
 }
+
+
 
