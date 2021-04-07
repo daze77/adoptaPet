@@ -22,13 +22,10 @@ import Pets from "./pages/Pets"
 import Background3 from "./assets/images/Background3.jpeg"
 
 
-// import Geo from "./components/Geo/Geo"
-
 function App() {
   return (
     <StoreProvider>
       <BrowserRouter>
-        {/* <AlertBar /> */}
         {/* <NavBar /> */}
         <NavBar2 />
         {/* <NavBar /> */}
@@ -51,8 +48,6 @@ function App() {
           </div>
         </div>
         <Footer />
-        {/* <SimpleMap/> */}
-        {/* <Geo /> */}
       </BrowserRouter>
     </StoreProvider>
   );

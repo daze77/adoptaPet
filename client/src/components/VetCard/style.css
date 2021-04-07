@@ -9,9 +9,11 @@
 }
 #content{
  padding-top: 15px;
+ overflow-y: auto;
+ overflow-x: auto;
 }
 #vetCard { 
-    width: 350px;
+    width: 400px;
     height: 200px;
     background-color: whitesmoke; 
     margin-left: 0px;

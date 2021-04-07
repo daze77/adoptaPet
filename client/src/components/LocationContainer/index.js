@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import "./style.css"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 

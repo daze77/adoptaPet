@@ -47,4 +47,14 @@
   background:inherit;
   border: none;
 }
+#adviceCard{
+
+  margin-bottom: 30px;
+
+}
+#AdviceBtn {
+  background:  green;
+  border: green;
+  
+}
 

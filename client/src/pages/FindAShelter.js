@@ -22,7 +22,7 @@ function FindAShelter() {
   return (
 
     <div id="mainContainer">
-      <h1>Animal Shelters</h1>
+      <h1>Animal Shelters in Toronto</h1>
 
       <LocationContainer shelters={shelters}>
         <div id="mapinfo">

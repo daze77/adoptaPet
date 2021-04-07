@@ -1,67 +1,30 @@
-import React, { useEffect, useRef } from "react"
-import { useStoreContext } from "../util/GlobalStore"
-import fetchJSON from "../util/API"
+import React, { Component } from "react"
+import Advice from "../util/advice.json"
 
-function Tasks() {
-  const [{ alert, tasks, name }, dispatch ]= useStoreContext()
 
-  const inputRef = useRef()
-
-  async function tasksLoad(){
-    const { status, tasks: newTasks, message }= await fetchJSON( '/api/tasks' )
-    if( !status ){
-      // for simplicity, we simply log user out if an error (ex. forbidden for invalid session)
-      dispatch({ type: "USER_LOGOUT", message })
-      return
-    }
-
-    // update tasks list
-    console.log( `.. GET /api/tasks, tasks:`, newTasks )
-    dispatch({ type: "UPDATE_TASKS", tasks: newTasks })
-  }
-
-  async function tasksSave( e ){
-    e.preventDefault()
-    
-    const newTask = inputRef.current.value
-    // clear input
-    inputRef.current.value = ''
-
-    const { status, tasks: newTasks, message }= await fetchJSON( '/api/tasks', 'post', { task: newTask } )
-    if( !status ){
-      dispatch({ type: "ALERT_MESSAGE", message })
-      return
-    }
-
-    dispatch({ type: "UPDATE_TASKS", tasks: newTasks, message })
-  }
-
-  // on load get the list
-  useEffect( function(){
-    tasksLoad()
-  }, [])
-  
-  return (
-      <form>
-      <div class="card">
-          <div class="card-header">
-              <h1>{name}'s Task List</h1>
-          </div>
-          <div  class="card-body">
-              <ul id="taskList" class="list-group">
-                {tasks && tasks.map( task=><li key={task._id} class="list-group-item">{task.name}</li> )}
-              </ul>
-          </div>
-
-          <div class="card-footer">
-            <div class="input-group">
-              <input ref={inputRef} type="text" class="form-control" placeholder='New Task...' /> 
-              <button onClick={tasksSave} disabled={alert.length>0} class="btn btn-primary">Save</button>
+class Articles extends Component {
+  render(){
+    return(
+      <div>
+        <h2>Advice for New Pet Owners</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-2 gx-3">
+        { Advice.map( advice =>{
+        return(
+            <div className="col">
+              <div key = {advice.id} className="card mb-3" id="adviceCard" >
+                <img src={advice.image} className="card-img-top" id="adviceImage" alt="advice article"/>
+                <div className="card-body">
+                  <p className="card-text"><strong><i>{advice.title}</i></strong> by {advice.source}</p>
+                  <a href={advice.link} target="_blank" rel="noreferrer" id="AdviceBtn" className="btn btn-primary">Read Full Article</a>
+                </div>
+              </div>
             </div>
-          </div>
+         
+          )
+        })}
+        </div>
       </div>
-      </form>
-  )
+    )
+  }
 }
-
-export default Tasks
+export default Articles

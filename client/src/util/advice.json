@@ -1,12 +1,16 @@
 [
     {
         "id": 1,
-        "title": "How to Choose the Right Dog Food",
+        "image": "https://www.bil-jac.com/media/2sxlmg0n/typeofeater-image.jpg?anchor=center&mode=crop&width=1024&height=512",
+        "title": "What Should I Feed My Dog?",
+        "source": "Petsmart",
         "link": "https://www.petsmart.ca/learning-center/dog-care/what-should-i-feed-my-dog/A0209.html?fdid=dog"
     },
     {
         "id": 2,
-        "title": "How to Train a Kitten",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb8w63e8h-ND9HdVG1HH_ERBpBOfTwWmplPw&usqp=CAU",
+        "title": "Training My New Kitten",
+        "source": "Purina",
         "link": "https://www.purina.ca/articles/kitten/training/training-my-new-kitten"
     },
     {
