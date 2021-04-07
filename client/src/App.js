@@ -29,7 +29,7 @@ function App() {
         {/* <NavBar /> */}
         <NavBar2 />
         {/* <NavBar /> */}
-        <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2 }}>
+        <div id="main" >
           <div class="container" >
 
             <Route exact path={["/", "/index"]} component={HomePage} />
