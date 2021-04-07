@@ -46,7 +46,7 @@ function HomePage(PetsInformation) {
 
     useEffect(function () {
         console.log('Running load pets')
-        loadPets('Dog', 'Dutch Shepherd')
+        loadPets('Dog', '')
     }, [])
 
     function pictureClick(id) {
