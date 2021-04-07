@@ -16,7 +16,7 @@ function Card(props) {
               <ul>
                 <li><strong>Name: </strong>{props.name}</li>
                 <li><strong>Address: </strong>{props.address}</li>
-                <a href={props.url}><strong>website: </strong>{props.name}</a>
+                <a href={props.url} target="-blank"><strong>website: </strong>{props.name}</a>
               </ul>
             </div>
           </div>
