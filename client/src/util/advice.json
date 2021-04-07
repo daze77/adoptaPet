@@ -1,52 +1,72 @@
 [
     {
         "id": 1,
-        "title": "How to Choose the Right Dog Food",
+        "image": "https://www.bil-jac.com/media/2sxlmg0n/typeofeater-image.jpg?anchor=center&mode=crop&width=1024&height=512",
+        "title": "What Should I Feed My Dog?",
+        "source": "Petsmart",
         "link": "https://www.petsmart.ca/learning-center/dog-care/what-should-i-feed-my-dog/A0209.html?fdid=dog"
     },
     {
         "id": 2,
-        "title": "How to Train a Kitten",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb8w63e8h-ND9HdVG1HH_ERBpBOfTwWmplPw&usqp=CAU",
+        "title": "Training My New Kitten",
+        "source": "Purina",
         "link": "https://www.purina.ca/articles/kitten/training/training-my-new-kitten"
     },
     {
         "id": 3,
-        "title": "Places to Look For a New Puppy",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGcKDbWel58fTOkihcWO06sCaSKYiEUGrHcw&usqp=CAU",
+        "title": "Where to Get a Puppy",
+        "source": "Hillspet.com",
         "link": "https://www.hillspet.com/dog-care/new-pet-parent/where-to-get-a-puppy"
     },
     {
         "id": 4,
+        "image": "https://www.rover.com/blog/wp-content/uploads/2018/01/sad-anxious-dog-960x540.jpg",
         "title": "Helping a New Dog's Anxiety after Coming Home",
+        "source": "Hillspet.com",
         "link": "https://www.hillspet.com/dog-care/new-pet-parent/new-dog-anxiety-symptoms-after-coming-home"
     },
     {
         "id": 5,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzI0EWG3ON8olyVo99v3LiuEvIo5VRJKf5WA&usqp=CAU",
         "title": "What to Expect When Adopting and Adult Cat",
+        "source": "Hillspet.com",
         "link": "https://www.hillspet.com/cat-care/new-pet-parent/adopting-an-adult-cat"
     },
     {
         "id": 6,
+       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTWXIwCzK61iPVmZwBN-SiIydL9HLdE1ZT2A&usqp=CAU",
         "title": "Do Hypoallergenic Cat Breeds Exist?",
+        "source": "Hillspet.com",
         "link": "https://www.hillspet.com/cat-care/new-pet-parent/hypoallergenic-and-low-shedding-cat-breeds"
     },
     {
         "id": 7,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQsXdgj5sDBaXQY6uqvI2aUDPnn5u2qQFO1w&usqp=CAU",
         "title": "How to Housetrain an Adult Dog",
+        "source": "Douglas Feed and Pet Supply",
         "link": "https://douglasfeedandpetsupply.com/blog/76485/how-to-housetrain-an-adult-dog"
     },
     {
         "id": 8,
+        "image": "https://149366112.v2.pressablecdn.com/wp-content/uploads/2014/12/6191418092_66738c33dd_o.jpg",
         "title": "Cutting Pet Care Costs",
+        "source": "ASPCA",
         "link": "https://www.aspca.org/pet-care/general-pet-care/cutting-pet-care-costs"
     },
     {
         "id": 9,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC0eIxqFSxXVORBhgf-IwHHfnweI9wYyPTXA&usqp=CAU",
         "title": "Disaster Preparedness",
+        "source": "ASPCA",
         "link": "https://www.aspca.org/pet-care/general-pet-care/disaster-preparedness"
     },
     {
         "id": 10,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvBjo01vX14EeRGtzaBe6UvQ72f09Tl06QQQ&usqp=CAU",
         "title": "Emergency Care for Your Pet",
+        "source": "ASPCA",
         "link": "https://www.aspca.org/pet-care/general-pet-care/emergency-care-your-pet"
     }
 ]
