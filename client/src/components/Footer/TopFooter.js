@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Social from '../Social/Social'
-import AddressCard from '../../components/AddressCard'
+import AddressCard from '../AddressCard'
 import './Footer.css'
 
 
