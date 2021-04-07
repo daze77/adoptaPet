@@ -7,9 +7,9 @@ function PetFilter(props) {
 
 
 
-        <div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="d-inline">
+            <div class="btn-group ">
+                <button type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
                     Choose Type
           </button>
                 <ul class="dropdown-menu">

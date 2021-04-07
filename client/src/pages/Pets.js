@@ -28,7 +28,6 @@ function HomePage(PetsInformation) {
 
 
 
-    console.log(petAttributesdeclawed)
 
 
 
@@ -52,7 +51,6 @@ function HomePage(PetsInformation) {
 
     function pictureClick(id) {
         const petDetails = pets.filter(item => item.id === id)
-        console.log(`this is the new petImage`, petDetails)
         setImage(petDetails[0].primary_photo_cropped.small)
         setPetName((petDetails[0].name))
         setPetDescription((petDetails[0].description))
@@ -60,21 +58,14 @@ function HomePage(PetsInformation) {
         setPetID((petDetails[0].id))
         setPetBreeds((petDetails[0].breeds.primary))
         setPetGender((petDetails[0].gender))
+        setPublishedAt((Date))
+
+        // this is to grab details from api and then pass through a test to convert the bool to yes/no
+
         let a = petDetails[0].attributes.declawed
         let b = petDetails[0].attributes.house_trained
         let c = petDetails[0].attributes.spayed_neutered
         let d = petDetails[0].attributes.shots_current
-        let e = petDetails[0].published_at
-
-        const formatDate = (e) => {
-            const options = { year: "numeric", month: "long", day: "numeric" }
-            return new Date(e).toLocaleDateString(undefined, options)
-        }
-
-
-        setPublishedAt((Date))
-
-
 
         if (a) {
             setPetAttributesdc("Yes")
@@ -100,31 +91,15 @@ function HomePage(PetsInformation) {
             setPetAttributesshots("No")
         } else { setPetAttributesshots("n/a") }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     return (
         <>
-            <h1> Pets</h1>  <PetFilter
+            <h1 class="d-inline">Pets   </h1>  <PetFilter 
                 dogFunc={() => loadPets('Dog', '')} catFunc={() => loadPets('Cat', '')} otherFunc={() => loadPets('Scales, Fins & Other', '')}
             />
 
-
-
-            <div class="row row-cols-1 row-cols-md-3 g-4"  >
+            <div class="row row-cols-1 row-cols-md-3 g-4 pt-2"  >
                 {pets.map(petsinfo => (
 
                     <PetCard
