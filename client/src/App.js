@@ -5,7 +5,7 @@ import { StoreProvider } from "./util/GlobalStore"
 
 //pages
 import NavBar2 from './components/NavBar/NavBar2'
-import Footer from "./components/Footer/Footer"
+// import Footer from "./components/Footer/Footer"
 // import Advice from "./pages/Advice"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
@@ -27,8 +27,8 @@ function App() {
     <StoreProvider>
       <BrowserRouter>
         <NavBar2 />
-        <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2 }}>
-          <div class="container" >
+        {/* <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2 }}>
+          <div class="container" > */}
 
             <Route exact path={["/", "/index"]} component={Login} />
             {/* <Route exact path={["/MessageBoards"]} component={MessageBoard} /> */}
@@ -43,9 +43,9 @@ function App() {
             {/* <Route exact path="/AboutUs" component={AboutUs} /> */}
             {/* <Route exact path="/ContactUs" component={ContactUs} /> */}
             {/* <Route exact path="/PrivacyPolicy" component={PrivacyPolicy} /> */}
-          </div>
-        </div>
-        <Footer />
+          {/* </div> */}
+        {/* </div> */}
+        {/* <Footer /> */}
       </BrowserRouter>
     </StoreProvider>
   );
