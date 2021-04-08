@@ -1,0 +1,23 @@
+.card-img {
+    width: 150px;
+    height: auto;
+    float: left;
+}
+.ul {
+    float: right;
+
+}
+#content{
+ padding-top: 15px;
+ overflow-y: auto;
+ overflow-x: auto;
+}
+#shelterCard { 
+    width: 400px;
+    height: 200px;
+    background-color: whitesmoke; 
+    margin-left: 0px;
+    margin-top: 5px;
+
+
+}
