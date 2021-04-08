@@ -19,7 +19,7 @@ import Logout from "./pages/Logout"
 // import ContactUs from "./pages/ContactUs"
 // import PrivacyPolicy from "./pages/PrivacyPolicy"
 // import Pets from "./pages/Pets"
-import Background3 from "./assets/images/Background3.jpeg"
+// import Background3 from "./assets/images/Background3.jpeg"
 
 
 function App() {
