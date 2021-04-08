@@ -18,7 +18,7 @@ import HomePage from "./pages/HomePage"
 import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
-// import Pets from "./pages/Pets"
+import Pets from "./pages/Pets"
 import Background3 from "./assets/images/Background3.jpeg"
 
 
@@ -37,7 +37,7 @@ function App() {
             {/* <Route exact path={["/FindAVet"]} component={FindAVet} /> */}
             {/* <Route exact path={"/advice"} component={Advice} /> */}
             <Route exact path="/register" component={Register} />
-            {/* <Route exact path="/Pets" component={Pets} /> */}
+            <Route exact path="/Pets" component={Pets} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/AboutUs" component={AboutUs} />
