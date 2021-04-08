@@ -6,7 +6,7 @@ import { StoreProvider } from "./util/GlobalStore"
 //pages
 import NavBar2 from './components/NavBar/NavBar2'
 import Footer from "./components/Footer/Footer"
-// import Advice from "./pages/Advice"
+import Advice from "./pages/Advice"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Logout from "./pages/Logout"
@@ -35,7 +35,7 @@ function App() {
             {/* <Route exact path={["/Reviews"]} component={Reviews} /> */}
             {/* <Route exact path={["/FindAShelter"]} component={FindAShelter} /> */}
             {/* <Route exact path={["/FindAVet"]} component={FindAVet} /> */}
-            {/* <Route exact path={"/advice"} component={Advice} /> */}
+            <Route exact path={"/advice"} component={Advice} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/Pets" component={Pets} />
             <Route exact path="/login" component={Login} />
