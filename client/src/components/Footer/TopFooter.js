@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import Social from '../Social/Social'
-// import AddressCard from '../../components/AddressCard'
+import AddressCard from '../../components/AddressCard'
 import './Footer.css'
 
 
@@ -21,7 +21,7 @@ function TopFooter() {
                             <div id="footertoppad" class="container">
                          
                                 <span class='footerContact'><h5>CONTACT</h5> </span>
-                                {/* <AddressCard /> */}
+                                <AddressCard />
                                 <span><a href="tel:+1-555-555-5555"> 555.555.5555</a></span><br />
                                 <span><a href="mailto:adoptapet@findmeahome.com"><i class="far fa-envelope"></i></a></span>
                             </div>
