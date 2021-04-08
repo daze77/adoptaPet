@@ -15,9 +15,9 @@ import HomePage from "./pages/HomePage"
 // import FindAVet from './pages/FindAVet'
 // import FindAShelter from './pages/FindAShelter'
 // import MessageBoard from './pages/MessageBoard'
-// import AboutUs from "./pages/AboutUs"
-// import ContactUs from "./pages/ContactUs"
-// import PrivacyPolicy from "./pages/PrivacyPolicy"
+import AboutUs from "./pages/AboutUs"
+import ContactUs from "./pages/ContactUs"
+import PrivacyPolicy from "./pages/PrivacyPolicy"
 // import Pets from "./pages/Pets"
 import Background3 from "./assets/images/Background3.jpeg"
 
@@ -40,9 +40,9 @@ function App() {
             {/* <Route exact path="/Pets" component={Pets} /> */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/logout" component={Logout} />
-            {/* <Route exact path="/AboutUs" component={AboutUs} /> */}
-            {/* <Route exact path="/ContactUs" component={ContactUs} /> */}
-            {/* <Route exact path="/PrivacyPolicy" component={PrivacyPolicy} /> */}
+            <Route exact path="/AboutUs" component={AboutUs} />
+            <Route exact path="/ContactUs" component={ContactUs} />
+            <Route exact path="/PrivacyPolicy" component={PrivacyPolicy} />
           </div>
         </div>
         <Footer />
