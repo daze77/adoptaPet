@@ -19,7 +19,7 @@ import Logout from "./pages/Logout"
 // import ContactUs from "./pages/ContactUs"
 // import PrivacyPolicy from "./pages/PrivacyPolicy"
 // import Pets from "./pages/Pets"
-// import Background3 from "./assets/images/Background3.jpeg"
+import Background3 from "./assets/images/Background3.jpeg"
 
 
 function App() {
@@ -27,8 +27,8 @@ function App() {
     <StoreProvider>
       <BrowserRouter>
         <NavBar2 />
-        {/* <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2 }}>
-          <div class="container" > */}
+        <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2 }}>
+          <div class="container" >
 
             <Route exact path={["/", "/index"]} component={Login} />
             {/* <Route exact path={["/MessageBoards"]} component={MessageBoard} /> */}
@@ -43,8 +43,8 @@ function App() {
             {/* <Route exact path="/AboutUs" component={AboutUs} /> */}
             {/* <Route exact path="/ContactUs" component={ContactUs} /> */}
             {/* <Route exact path="/PrivacyPolicy" component={PrivacyPolicy} /> */}
-          {/* </div> */}
-        {/* </div> */}
+          </div>
+        </div>
         {/* <Footer /> */}
       </BrowserRouter>
     </StoreProvider>
