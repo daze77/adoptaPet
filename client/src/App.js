@@ -5,7 +5,7 @@ import { StoreProvider } from "./util/GlobalStore"
 
 //pages
 import NavBar2 from './components/NavBar/NavBar2'
-// import Footer from "./components/Footer/Footer"
+import Footer from "./components/Footer/Footer"
 // import Advice from "./pages/Advice"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
@@ -45,7 +45,7 @@ function App() {
             {/* <Route exact path="/PrivacyPolicy" component={PrivacyPolicy} /> */}
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </StoreProvider>
   );
