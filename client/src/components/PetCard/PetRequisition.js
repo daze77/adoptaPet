@@ -138,14 +138,7 @@ function PetRequisition() {
                                 <label for="inputZip" class="form-label">Postal</label>
 
                             </div>
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck"/>
-                                    {/* <label class="form-check-label" for="gridCheck">
-                                        Check me out
-                                    </label> */}
-                                </div>
-                            </div>
+
                         </form>
 
 
