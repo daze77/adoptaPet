@@ -12,7 +12,7 @@ import Login from "./pages/Login"
 import Logout from "./pages/Logout"
 import HomePage from "./pages/HomePage"
 import Reviews from './pages/Reviews'
-// import FindAVet from './pages/FindAVet'
+import FindAVet from './pages/FindAVet'
 import FindAShelter from './pages/FindAShelter'
 import MessageBoard from './pages/MessageBoard'
 import AboutUs from "./pages/AboutUs"
@@ -34,7 +34,7 @@ function App() {
             <Route exact path={["/MessageBoards"]} component={MessageBoard} />
             <Route exact path={["/Reviews"]} component={Reviews} />
             <Route exact path={["/FindAShelter"]} component={FindAShelter} />
-            {/* <Route exact path={["/FindAVet"]} component={FindAVet} /> */}
+            <Route exact path={["/FindAVet"]} component={FindAVet} />
             <Route exact path={"/advice"} component={Advice} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/Pets" component={Pets} />
