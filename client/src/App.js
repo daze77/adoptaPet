@@ -14,7 +14,7 @@ import HomePage from "./pages/HomePage"
 // import Reviews from './pages/Reviews'
 // import FindAVet from './pages/FindAVet'
 // import FindAShelter from './pages/FindAShelter'
-// import MessageBoard from './pages/MessageBoard'
+import MessageBoard from './pages/MessageBoard'
 import AboutUs from "./pages/AboutUs"
 import ContactUs from "./pages/ContactUs"
 import PrivacyPolicy from "./pages/PrivacyPolicy"
@@ -31,7 +31,7 @@ function App() {
           <div class="container" >
 
             <Route exact path={["/", "/index"]} component={HomePage} />
-            {/* <Route exact path={["/MessageBoards"]} component={MessageBoard} /> */}
+            <Route exact path={["/MessageBoards"]} component={MessageBoard} />
             {/* <Route exact path={["/Reviews"]} component={Reviews} /> */}
             {/* <Route exact path={["/FindAShelter"]} component={FindAShelter} /> */}
             {/* <Route exact path={["/FindAVet"]} component={FindAVet} /> */}
