@@ -242,5 +242,5 @@ module.exports = {
    messageReplySaveAndList,
    reviewList,
    reviewSaveAndList,
-   requisitionInformation
+   requisitionInformation,
 };

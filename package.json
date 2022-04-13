@@ -3,35 +3,36 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "start:prod":"node server.js",
+    "start:prod": "node server.js",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build"
-    
   },
   "author": "Filipe Laborde",
   "license": "MIT",
   "dependencies": {
     "@petfinder/petfinder-js": "^1.0.6",
-    "babel": "^6.23.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "gh-pages": "^3.1.0",
     "if-env": "^1.0.4",
+    "leaflet": "^1.7.1",
+    "mongodb": "^4.5.0",
     "mongoose": "^5.12.2",
-    "react-leaflet": "^3.1.0",
+    "nodemon": "^2.0.14",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-leaflet": "^3.2.5",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/leaflet": "^1.7.0",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.4",
     "concurrently": "^6.0.1",
-    "nodemon": "^2.0.7"
+    "webpack": "^5.72.0"
   }
 }

@@ -1,12 +1,12 @@
 require( 'dotenv' ).config() // looks for .env ; process.env gets it's values
 
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 const path = require('path')
 const express = require('express')
 const apiRouter = require('./app/router')
 const app = express()
-const Messages = require('./app/db/models/messages')
-const Reviews = require('./app/db/models/reviews')
+// const Messages = require('./app/db/models/messages')
+// const Reviews = require('./app/db/models/reviews')
 
 
 
@@ -14,7 +14,7 @@ const Reviews = require('./app/db/models/reviews')
 
 
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8086
 const API_URL = process.env.NODE_ENV === 'production' ?
    'https://bthadoptapet.herokuapp.com' : `http://localhost:${PORT}`
 // production uses REACT production-build content
