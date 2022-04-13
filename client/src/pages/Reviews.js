@@ -1,8 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { Redirect } from 'react-router-dom'
+import { useStoreContext } from "../util/GlobalStore"
 import fetchJSON from '../util/API'
 
 
 function Reviews() {
+  const [{ authOk },  ]= useStoreContext()
+
   const inputName = useRef()
   const inputOrganization = useRef()
   const inputSubject = useRef()
@@ -48,6 +52,10 @@ function Reviews() {
 
 
   return (
+    <>
+        { !authOk && <Redirect to='/login' /> }
+
+    
     <div>
       <h1>Reviews</h1>
       <div className="mb-3">
@@ -83,6 +91,8 @@ function Reviews() {
       )
       }
     </div>
+    </>
+
   )
 }
 

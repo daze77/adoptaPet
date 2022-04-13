@@ -1,8 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react'
+import { Redirect } from 'react-router-dom'
+import { useStoreContext } from "../util/GlobalStore"
 import fetchJSON from '../util/API'
 
 
 function MessageBoard() {
+  const [{ authOk },  ]= useStoreContext()
+
   const inputName = useRef()
   const inputSubject = useRef()
   const inputMessage = useRef()
@@ -108,6 +112,8 @@ function MessageBoard() {
   }, [])
 
   return (
+    <>
+    { !authOk && <Redirect to='/login' /> }
     <div>
       <h1>Message Board</h1>
       <div className="mb-3">
@@ -205,6 +211,7 @@ function MessageBoard() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
