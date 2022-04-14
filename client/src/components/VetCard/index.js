@@ -6,18 +6,16 @@ function VetCard(props) {
 
   return (
     <div class="col">
-      <div className="card mb-3" id="VetCard">
-        <div className="row">
+      <div className="card mb-3 " id="VetCard">
+        <div className="row g-0">
           <div className="col-md-4">
-            <img src={props.image} className="card-img" alt={props.name} />
+            <img src={props.image} className="img-fluid rounded-start vetImage" alt={props.name} />
           </div>
           <div className="col-md-8">
-            <div className="content" id="content">
-              <ul>
-                <li><strong>Name: </strong>{props.name}</li>
-                <li><strong>Address: </strong>{props.address}</li>
-                <a href={props.url} target="-blank"><strong>website: </strong>{props.name}</a>
-              </ul>
+            <div className="card-body " id="">
+              <div className='card-title'>{props.name}</div>
+                <p class="card-text">{props.address}</p>
+                <p class="card-text"><small class="text-muted"><a href={props.url} target="-blank">Website</a></small></p>
             </div>
           </div>
         </div>

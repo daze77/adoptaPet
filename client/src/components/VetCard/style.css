@@ -1,23 +1,16 @@
-.card-img {
-    width: 150px;
-    height: auto;
-    float: left;
-}
-.ul {
-    float: right;
-
-}
-#content{
- padding-top: 15px;
- overflow-y: auto;
- overflow-x: auto;
-}
 #vetCard { 
-    width: 400px;
-    height: 200px;
+    max-width: 400px;
+    height: 300px;
     background-color: whitesmoke; 
     margin-left: 0px;
     margin-top: 5px;
 
+
+}
+
+.vetImage{
+    width: auto;
+    height: 100%;
+    object-fit:cover;
 
 }
