@@ -20,6 +20,8 @@ function fetchJSON( url, method='get', data={} ){
         method,
         headers: {
             'Content-Type': 'application/json',
+            // 'Accept': 'application/json',
+
             // looks for a session entry in localStorage, and if so pass it
             'Session': localStorage.session || ''
         }
