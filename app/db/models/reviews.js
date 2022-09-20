@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const reviews = new Schema({
    name: { type: String, required: true, trim: true },
-   organization: {type: String, required: true, trim: true },
+   organization: {type: String, required: false, trim: true },
    subject: { type: String, required: true, trim: true},
    review: { type: String, required: true, trim: true },
    ownerId: Schema.Types.ObjectId

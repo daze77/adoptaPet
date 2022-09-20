@@ -46,6 +46,15 @@ function Reviews() {
     }
   }
 
+  async function validateSubmit(event){
+    event.preventDefault()
+    const form = event.target.ownerDocument.forms[0]
+
+    !form.checkValidity() ? form.classList.add('was-validated') : reviewSubmit(event)
+    
+
+  }
+
   useEffect(function () {
     reviewLoad()
   }, [])
@@ -58,7 +67,8 @@ function Reviews() {
     
     <div>
       <h1>Reviews</h1>
-      <div className="mb-3">
+
+      {/* <div className="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>
         <input ref={inputName} type="name" className="form-control" id="exampleFormControlInput1" placeholder="" />
         <div className="mb-3">
@@ -74,8 +84,78 @@ function Reviews() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+
       <br />
+
+
+      {/* This will be the new form  */}
+
+
+
+        <form class="row g-3 reviewsForm " id="reviewsForm" >
+          <div class="col-12">
+            <label for="validationServer01" class="form-label">Name</label>
+            <input ref={inputName} type="text" class="form-control " id="validationServer01"  required />
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="validationServer02" class="form-label">Organization</label>
+            <input ref={inputOrganization} type="organization" class="form-control " id="validationServer02" />
+
+          </div>
+          <div class="col-12">
+            <label for="validationServer03" class="form-label">Subject</label>
+            <input ref={inputSubject} type="subject" class="form-control " id="validationServer03"  required />
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="validationTextarea" class="form-label">Review</label>
+            <textarea ref={inputReview} class="form-control " id="validationTextarea"  required />
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <div class="col-12">
+            <button  onClick={validateSubmit} class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
 
       {allReviews.map(userReview => (
         <div className="card mb-2">

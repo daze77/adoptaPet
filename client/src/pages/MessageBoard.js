@@ -181,6 +181,13 @@ function MessageBoard() {
               </div>
             </div>
           </div> */}
+
+
+
+
+
+
+          
           <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
               <div className="modal-content">
@@ -208,6 +215,14 @@ function MessageBoard() {
               </div>
             </div>
           </div>
+
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
