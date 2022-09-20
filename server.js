@@ -14,7 +14,7 @@ const app = express()
 
 
 
-const PORT = process.env.PORT || 8086
+const PORT = process.env.PORT || 8080
 const API_URL = process.env.NODE_ENV === 'production' ?
    'https://bthadoptapet.herokuapp.com' : `http://localhost:${PORT}`
 // production uses REACT production-build content
