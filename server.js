@@ -16,7 +16,7 @@ const app = express()
 
 const PORT = process.env.PORT || 8080
 const API_URL = process.env.NODE_ENV === 'production' ?
-   'https://bthadoptapet.herokuapp.com' : `http://localhost:${PORT}`
+   'https://adopt-a-pet.onrender.com' : `http://localhost:${PORT}`
 // production uses REACT production-build content
 const STATIC_PATH = process.env.NODE_ENV === 'production' ?
    path.join('client','build') : path.join('client','public')
