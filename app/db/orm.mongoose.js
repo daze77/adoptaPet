@@ -2,7 +2,9 @@ const mongoose = require( 'mongoose' )
 const bcrypt = require( 'bcrypt' )
 
 mongoose.connect(process.env.MONGODB_URI,
-   {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+   {
+      // useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false
+   })
 
 // include mongoose models (it will include each file in the models directory)
 const db = require( './models' )
