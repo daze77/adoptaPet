@@ -5,7 +5,7 @@ import fetchJSON from '../util/API'
 
 
 function Reviews() {
-  const [{ authOk },  ]= useStoreContext()
+  const [{ authOk, alert }, dispatch]= useStoreContext()
 
   const inputName = useRef()
   const inputOrganization = useRef()
@@ -15,7 +15,14 @@ function Reviews() {
   const [allReviews, setAllReviews] = useState([])
 
   async function reviewLoad() {
-    const { status, reviewList } = await fetchJSON('/api/reviews')
+    const { status, reviewList, message } = await fetchJSON('/api/reviews')
+    
+    if( !status ){
+      // for simplicity, we simply log user out if an error (ex. forbidden for invalid session)
+      dispatch({ type: "USER_LOGOUT", message })
+      return
+    }
+
     console.log(`Review load ${status}`, reviewList)
     setAllReviews(reviewList)
   }
