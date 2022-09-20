@@ -65,35 +65,10 @@ function Reviews() {
         { !authOk && <Redirect to='/login' /> }
 
     
-    <div>
-      <h1>Reviews</h1>
+    <div className="pb-3">
+      <h1>Leave Us A Review</h1>
 
-      {/* <div className="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Name</label>
-        <input ref={inputName} type="name" className="form-control" id="exampleFormControlInput1" placeholder="" />
-        <div className="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Organization</label>
-          <input ref={inputOrganization} type="organization" className="form-control" id="exampleFormControlInput1" placeholder="" />
-          <div className="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Subject</label>
-            <input ref={inputSubject} type="subject" className="form-control" id="exampleFormControlInput1" placeholder="" />
-            <div className="mb-3">
-              <label for="exampleFormControlTextarea1" className="form-label">Review</label>
-              <textarea ref={inputReview} class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              <button onClick={reviewSubmit} type="button" className="btn btn-primary">Submit</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-
-      <br />
-
-
-      {/* This will be the new form  */}
-
-
-
+  
         <form class="row g-3 reviewsForm " id="reviewsForm" >
           <div class="col-12">
             <label for="validationServer01" class="form-label">Name</label>
@@ -122,38 +97,14 @@ function Reviews() {
             </div>
           </div>
 
-
-
-
-
-
-
-
-
-
           <div class="col-12">
-            <button  onClick={validateSubmit} class="btn btn-primary" type="submit">Submit form</button>
+            <button  onClick={validateSubmit} class="btn btn-primary" type="submit">Submit</button>
           </div>
         </form>
 
+        <br />
 
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
+        <h1>Past Reviews</h1>
 
 
 
