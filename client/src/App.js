@@ -30,7 +30,11 @@ function App() {
         <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2 }}>
           <div class="container" >
 
-            <Route exact path={["/", "/index"]} component={HomePage} />
+            {/* <Route exact path={["/", "/index"]} component={HomePage} /> */}
+            <Route exact path={["/"]} component={HomePage} />
+            <Route exact path={["/index"]} component={HomePage} />
+
+
             <Route exact path={["/MessageBoards"]} component={MessageBoard} />
             <Route exact path={["/Reviews"]} component={Reviews} />
             <Route exact path={["/FindAShelter"]} component={FindAShelter} />
