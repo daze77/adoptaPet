@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { useStoreContext } from "../util/GlobalStore"
 import fetchJSON from '../util/API'
-import { forEach } from 'mathjs'
 
 
 function MessageBoard() {
