@@ -138,7 +138,7 @@ function Reviews() {
 
 
       {allReviews.map(userReview => (
-        <div className="card mb-2">
+        <div className="card reviewCard mb-2">
           <div className="card-body">
             <h5 className="card-title">{userReview.subject}</h5>
             <h6 className="card-subtitle mb-2 text-muted">{userReview.organization}</h6>

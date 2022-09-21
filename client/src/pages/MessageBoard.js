@@ -198,7 +198,7 @@ function handleChange(e){
                 <ul className="list-group mt-2">
 
                   {userMessage.reply.map(reply => (
-                    <li className="list-group-item">
+                    <li className="list-group-item replyMessageCard">
                       <u>{reply.subject}</u> by <b>{reply.name}</b>: {reply.message}
                     </li>
                   )
