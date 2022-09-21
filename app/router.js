@@ -94,9 +94,10 @@ function router(app) {
    })
 
    app.post('/api/messagereply', authRequired, async function (req, res) {
-      const newMessage = req.body.message
-      const newSubject = req.body.subject
-      const newName = req.body.name
+      console.log(req.body)
+      const newMessage = req.body.replyMessage
+      const newSubject = req.body.replySubject
+      const newName = req.body.replyName
       const id = req.body.id
       console.log('newMessage', newMessage)
       const { status, messages } = await orm.messageReplySaveAndList(newMessage, newSubject, newName, id, req.sessionData.userId)

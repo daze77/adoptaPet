@@ -6,13 +6,27 @@ import fetchJSON from '../util/API'
 
 function Reviews() {
   const [{ authOk, alert }, dispatch]= useStoreContext()
+  const [reviewMessage, setReviewMessage] = useState({
+          name: '',
+          organization: '',
+          subject: '',
+          review: ''
+  })
 
-  const inputName = useRef()
-  const inputOrganization = useRef()
-  const inputSubject = useRef()
-  const inputReview = useRef()
 
   const [allReviews, setAllReviews] = useState([])
+
+
+  function handleChange(e){
+    console.log('you typed a letter')
+    console.log(e.target)
+    let nam = e.target.name 
+    let val = e.target.value
+
+    setReviewMessage({...reviewMessage, [nam]:val})
+    console.log('this is review', reviewMessage)
+
+  }
 
   async function reviewLoad() {
     const { status, reviewList, message } = await fetchJSON('/api/reviews')
@@ -30,18 +44,25 @@ function Reviews() {
   async function reviewSubmit(event) {
     event.preventDefault()
     let savedReview = {
-      name: inputName.current.value,
-      organization: inputOrganization.current.value,
-      subject: inputSubject.current.value,
-      review: inputReview.current.value
+      name: reviewMessage.name,
+      organization: reviewMessage.organization,
+      subject: reviewMessage.subject,
+      review: reviewMessage.review
     }
     console.log(savedReview)
 
     // clear input
-    inputName.current.value = ''
-    inputOrganization.current.value = ''
-    inputSubject.current.value = ''
-    inputReview.current.value = ''
+    setReviewMessage({
+      name: '',
+      organization: '',
+      subject: '',
+      review: ''
+
+    })
+
+    // remove was-validated class so that form is clean from validation check
+    document.querySelector('.was-validated').classList.remove('was-validated')
+
 
     try {
       await fetchJSON('/api/reviews', 'post', savedReview)
@@ -53,9 +74,9 @@ function Reviews() {
     }
   }
 
-  async function validateSubmit(event){
+  function validateSubmit(event){
     event.preventDefault()
-    const form = event.target.ownerDocument.forms[0]
+    const form = event.target.ownerDocument.forms.reviewsForm
 
     !form.checkValidity() ? form.classList.add('was-validated') : reviewSubmit(event)
     
@@ -79,26 +100,26 @@ function Reviews() {
         <form class="row g-3 reviewsForm " id="reviewsForm" >
           <div class="col-12">
             <label for="validationServer01" class="form-label">Name</label>
-            <input ref={inputName} type="text" class="form-control " id="validationServer01"  required />
+            <input  type="text" class="form-control " id="validationServer01"  name='name' value={reviewMessage.name} onChange={handleChange} required />
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-12">
             <label for="validationServer02" class="form-label">Organization</label>
-            <input ref={inputOrganization} type="organization" class="form-control " id="validationServer02" />
+            <input  type="organization" class="form-control" id="validationServer02" name='organization' value={reviewMessage.organization} onChange={handleChange}/>
 
           </div>
           <div class="col-12">
             <label for="validationServer03" class="form-label">Subject</label>
-            <input ref={inputSubject} type="subject" class="form-control " id="validationServer03"  required />
+            <input  type="subject" class="form-control " id="validationServer03" name='subject' value={reviewMessage.subject} onChange={handleChange} required />
             <div class="valid-feedback">
               Looks good!
             </div>
           </div>
           <div class="col-12">
             <label for="validationTextarea" class="form-label">Review</label>
-            <textarea ref={inputReview} class="form-control " id="validationTextarea"  required />
+            <textarea  class="form-control " id="validationTextarea"  required name='review' value={reviewMessage.review} onChange={handleChange}/>
             <div class="valid-feedback">
               Looks good!
             </div>
