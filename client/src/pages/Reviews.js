@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { useStoreContext } from "../util/GlobalStore"
 import fetchJSON from '../util/API'

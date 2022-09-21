@@ -113,9 +113,9 @@ async function taskSaveAndList( newTask, ownerId ){
    return taskList( ownerId, 'Task saved' )
 }
 
-async function messageList( ownerId, subject='', message='' ){
+async function messageList( subject='', message='' ){
    // refuse duplicate user emails
-   const messageList = await db.messages.find({ ownerId }, '-ownerId -__v').populate('reply').sort({createdAt: -1})
+   const messageList = await db.messages.find({  }).populate('reply').sort({createdAt: -1})
 
    return {
       status: true,
@@ -154,9 +154,9 @@ async function messageReplySaveAndList( newMessage, subject, name, id, ownerId )
    return messageList( ownerId, 'Reply saved' )
 }
 
-async function reviewList( ownerId, organization='', subject='', review='' ){
+async function reviewList( organization='', subject='', review='' ){
    // refuse duplicate user emails
-   const reviewList = await db.reviews.find({ ownerId }, '-ownerId -__v').sort({createdAt: -1})
+   const reviewList = await db.reviews.find({  }, ).sort({createdAt: -1})
 
    return {
       status: true,
