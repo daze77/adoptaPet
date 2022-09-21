@@ -61,8 +61,9 @@ function Reviews() {
     })
 
     // remove was-validated class so that form is clean from validation check
-    document.querySelector('.was-validated').classList.remove('was-validated')
-
+    if(document.querySelector('.reviewsForm').classList.contains('was-validated')){
+      document.querySelector('.reviewsForm').classList.remove('was-validated')
+    }
 
     try {
       await fetchJSON('/api/reviews', 'post', savedReview)

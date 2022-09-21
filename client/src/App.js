@@ -28,7 +28,7 @@ function App() {
       <BrowserRouter>
         <NavBar2 />
         <div id="main" style={{ backgroundImage: `url(${Background3})`, width: 'full', backgroundRepeat: "no-repeat", backgroundSize: 'cover', opacity: 2 }}>
-          <div class="container" >
+          <div class="container pb-5" >
 
             <Route exact path={["/", "/index"]} component={HomePage} />
 

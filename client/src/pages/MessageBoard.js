@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { useStoreContext } from "../util/GlobalStore"
 import fetchJSON from '../util/API'
+import './Pages.css'
 
 
 function MessageBoard() {
@@ -90,7 +91,11 @@ function handleChange(e){
     try {
       await fetchJSON('/api/messages', 'post', savedMessage)
       console.log("Message saved")
-      document.querySelector('.was-validated').classList.remove('was-validated')
+
+    // remove was-validated class so that form is clean from validation check
+    if(document.querySelector('.messageBoard').classList.contains('was-validated')){
+        document.querySelector('.messageBoard').classList.remove('was-validated')
+      }
 
       messageLoad()
     }
@@ -127,8 +132,9 @@ function handleChange(e){
     document.querySelector('.btn-close').click()
 
     // remove was-validated class so that form is clean from validation check
-    document.querySelector('.was-validated').classList.remove('was-validated')
-
+    if(document.querySelector('.replyMessageBoard').classList.contains('was-validated')){
+      document.querySelector('.replyMessageBoard').classList.remove('was-validated')
+    }
 
 
     setShow(false)
@@ -181,7 +187,7 @@ function handleChange(e){
 
         <br />
           {allMessages.map(userMessage => (
-            <div className="card mb-2">
+            <div className="card mb-2 messageBoardCard">
               <div className="card-body">
                 <h5 className="card-title">{userMessage.subject}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">{userMessage.name}</h6>
