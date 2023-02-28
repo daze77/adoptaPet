@@ -7,6 +7,7 @@ async function loadPets(animal, breed) {
         }
     })
         .then(r => r.json())
+        // console.log(response)
 
     return response
 }

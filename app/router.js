@@ -1,7 +1,8 @@
 const orm = require('./db/orm.mongoose')
 const sessionManager = require('./session-manager')
 var petfinder = require('@petfinder/petfinder-js');
-var client = new petfinder.Client({ apiKey: 'DgoYHAZ8wJO0sjjbvvSp6tZO8yXYb9Rrjo0yIg7wKkXM2P9sbC', secret: 'GHhhiwex8rmRZl3bAfEUx0pIk4GgM0yI0OOKhszr' })
+var client = new petfinder.Client({ apiKey: process.env.apiKey, secret: process.env.apiSecret })
+
 
 
 // session checking middleware
@@ -94,9 +95,10 @@ function router(app) {
    })
 
    app.post('/api/messagereply', authRequired, async function (req, res) {
-      const newMessage = req.body.message
-      const newSubject = req.body.subject
-      const newName = req.body.name
+      console.log(req.body)
+      const newMessage = req.body.replyMessage
+      const newSubject = req.body.replySubject
+      const newName = req.body.replyName
       const id = req.body.id
       console.log('newMessage', newMessage)
       const { status, messages } = await orm.messageReplySaveAndList(newMessage, newSubject, newName, id, req.sessionData.userId)
@@ -120,8 +122,6 @@ function router(app) {
       console.log(` .. updated with '${newReview}' for ownerId(${req.sessionData.userId})`)
       res.send({ status, reviews })
    })
-
-
 
    app.post('/api/users/requisition', async function (req, res) {
       console.log('[POST /api/users/requisition] request body:', req.body)
@@ -149,7 +149,7 @@ function router(app) {
             limit: 50,
          });
 
-         // console.log(apiResult.data)
+         console.log(apiResult.data)
          res.send(apiResult.data.animals)
          return apiResult.data
       }
@@ -164,7 +164,94 @@ function router(app) {
 
    })
 
+// retreiving the sherter information and pasing to front end
+   app.get('/api/getShelterInfo', async function (req, res){
+      const results = await fetch('https://api.yelp.com/v3/businesses/search?location=Toronto&term=%22pet%20shelter%22&radius=40000&sort_by=best_match&limit=50', {
+         method: 'GET',
+         headers: {
+             Accept: 'application/json',
+             Authorization: process.env.bearer         
+             }
+
+         }
+      ).then(e => e.json())
+
+
+      // console.log('this is results', results.businesses)
+
+      res.json(results.businesses.map(shelter =>{
+               return{
+               id: shelter.id,
+               name: shelter.name,
+               address: shelter.location.display_address.join(","),
+               url: shelter.url,
+               image: shelter.image_url,
+               latitude: shelter.coordinates.latitude,
+               longitude: shelter.coordinates.longitude
+               }
+
+      }))
+   }
+      
+   )
+
+
+// retreiving the vet information and pasing to front end
+
+   app.get('/api/getVetInfo', async function (req, res){
+      const results = await fetch('https://api.yelp.com/v3/businesses/search?location=Toronto&term=vets&radius=40000&sort_by=best_match&limit=50', {
+         method: 'GET',
+         headers: {
+             Accept: 'application/json',
+             Authorization: process.env.bearer         
+             }
+
+         }
+      ).then(e => e.json())
+
+
+          console.log('this is results', results.businesses)
+
+
+      res.json(results.businesses.map(vet =>{
+               return{
+                  id: vet.id,
+                  name: vet.name,
+                  address: vet.location.display_address.join(","),
+                  url: vet.url,
+                  image: vet.image_url,
+                  latitude: vet.coordinates.latitude,
+                  longitude: vet.coordinates.longitude
+               }
+
+      }))
+   }
+      
+   )
+
+
+
+
+
+
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router

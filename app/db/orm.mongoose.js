@@ -1,8 +1,8 @@
 const mongoose = require( 'mongoose' )
 const bcrypt = require( 'bcrypt' )
 
-mongoose.connect(process.env.MONGODB_URI,
-   {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+mongoose.connect(process.env.MONGODB_URI)
+   // {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 
 // include mongoose models (it will include each file in the models directory)
 const db = require( './models' )
@@ -147,7 +147,7 @@ async function messageReplySaveAndList( newMessage, subject, name, id, ownerId )
          message: 'Sorry could not save reply!'
       }
    }
-   const result2 = await db.messages.updateOne({ _id: mongoose.Types.ObjectId(`${id}`) }, { $push: { reply: result._id } })
+   const result2 = await db.messages.findOneAndUpdate({ _id: mongoose.Types.ObjectId(`${id}`) }, { $push: { reply: result._id } })
 
    return messageList( ownerId, 'Reply saved' )
 }

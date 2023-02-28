@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import ScrollContainer from "../components/ScrollContainer";
 import LocationContainer from "../components/LocationContainer";
 import ShelterCard from "../components/ShelterCard";
-import APIshelter from "../util/APIshelter"
+import fetchJSON from "../util/API"
+import placeholder from '../assets/images/placeholderimg.png'
+
 
 function FindAShelter() {
   const [shelters, setShelter] = useState([])
 
-  function getShelters() {
-    APIshelter().then(shelters => {
-      setShelter(shelters);
-    })
-      .catch(err => console.log(err))
+  async function getShelters() {
+    console.log('launched')
+    const shelterResults = await fetchJSON('/api/getShelterInfo').catch(err => console.log(err))
+    console.log(shelterResults)
+    setShelter(shelterResults)
   }
 
   useEffect(() => {
@@ -29,13 +31,13 @@ function FindAShelter() {
         </div>
       </LocationContainer>
       <ScrollContainer>
-        <div class="row row-cols-1 row-cols-xl-3 g-2 gx-3"  >
+        <div class="row row-cols-1 row-cols-xl-3 gx-3"  >
           {shelters.map(shelter => (
             <ShelterCard
               id={shelter.id}
               key={shelter.id}
               name={shelter.name}
-              image={shelter.image}
+              image= {shelter.image? shelter.image : placeholder}
               address={shelter.address}
               url={shelter.url}
             />))}

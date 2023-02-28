@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import VetCard from "../components/VetCard";
-import vetapi from "../util/adoptionapi/vetapi";
 import ScrollContainer from "../components/ScrollContainer";
 import VetLocationMap from "../components/VetLocationMap";
+import fetchJSON from "../util/API";
+import placeholder from '../assets/images/placeholderimg.png'
+
 
 function FindAVet() {
   const [vets, setVets] = useState([])
 
-  function getVets() {
-    vetapi().then(vets => {
-      setVets(vets);
-    })
-      .catch(err => console.log(err))
+  async function getVets() {
+    console.log('launched')
+    const vetResults = await fetchJSON('/api/getVetInfo').catch(err => console.log(err))
+    console.log(setVets)
+    setVets(vetResults)
   }
 
   useEffect(() => {
@@ -22,7 +24,7 @@ function FindAVet() {
     <div id="mainContainer">
       <h1>Vets in Toronto</h1>
 
-       <VetLocationMap vets={vets}>
+      <VetLocationMap vets={vets}>
         <div id="mapinfo">
         </div>
       </VetLocationMap>
@@ -33,7 +35,7 @@ function FindAVet() {
               id={vet.id}
               key={vet.id}
               name={vet.name}
-              image={vet.image}
+              image={vet.image ? vet.image : placeholder}
               address={vet.address}
               url={vet.url}
             />))}
@@ -42,7 +44,5 @@ function FindAVet() {
     </div>
   );
 }
-
-
 
 export default FindAVet

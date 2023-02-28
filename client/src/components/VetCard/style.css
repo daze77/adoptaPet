@@ -1,23 +1,10 @@
-.card-img {
-    width: 150px;
-    height: auto;
-    float: left;
+#vetCardImg {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
 }
-.ul {
-    float: right;
 
-}
-#content{
- padding-top: 15px;
- overflow-y: auto;
- overflow-x: auto;
-}
-#vetCard { 
-    width: 400px;
-    height: 200px;
-    background-color: whitesmoke; 
-    margin-left: 0px;
-    margin-top: 5px;
-
-
+#vetCard{
+    border: none;    
+    flex-direction: initial;
 }

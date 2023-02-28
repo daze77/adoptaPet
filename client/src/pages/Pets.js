@@ -9,7 +9,7 @@ import petAPI from '../util/petAPI/petAPI'
 
 
 
-function HomePage(PetsInformation) {
+function HomePage() {
     const [pets, setPets] = useState([])
     const [image, setImage] = useState('')
     const [petname, setPetName] = useState('')

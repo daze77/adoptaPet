@@ -1,5 +1,5 @@
-import React from 'react'
-import petAPI from '../../util/petAPI/petAPI'
+// import React from 'react'
+// import petAPI from '../../util/petAPI/petAPI'
 
 function PetFilter(props) {
     return (
