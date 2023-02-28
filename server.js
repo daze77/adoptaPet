@@ -55,5 +55,5 @@ if (process.env.NODE_ENV === 'production') {
 
 
 app.listen(PORT, function(){
-   console.log( `Serving app on: ${API_URL}}` )
+   console.log( `Serving app on: ${API_URL}` )
 })
