@@ -4,7 +4,6 @@ var petfinder = require('@petfinder/petfinder-js');
 var client = new petfinder.Client({ apiKey: process.env.apiKey, secret: process.env.apiSecret })
 
 
-
 // session checking middleware
 async function authRequired(req, res, next) {
    // check session set, and it's valid
@@ -177,8 +176,9 @@ function router(app) {
       ).then(e => e.json())
 
 
-      console.log('this is results', results.businesses)
+      console.log('this is results', results)
       console.log('this is process.env', process.env.bearer)
+      // console.log('this is fetch', req)
 
 
 
@@ -200,6 +200,7 @@ function router(app) {
    }
       
    )
+
 
 
 // retreiving the vet information and pasing to front end
