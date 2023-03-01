@@ -176,27 +176,47 @@ function router(app) {
       ).then(e => e.json()).catch(err=>console.log(err))
 
 
-      console.log('this is results', results)
-      console.log('this is process.env', process.env.bearer)
+      // console.log('this is results', results)
+      // console.log('this is process.env', process.env.bearer)
       // console.log('this is fetch', req)
 
+      // console.log('yo router did we get any results', results)
+
+      let shelterData = [ ]
+
+      results.businesses.map(shelter => {
+         shelterData.push({
+            id: shelter.id,
+            name: shelter.name,
+            address: shelter.location.display_address.join(","),
+            url: shelter.url,
+            image: shelter.image_url,
+            latitude: shelter.coordinates.latitude,
+            longitude: shelter.coordinates.longitude,
+            process: process.env.bearer
+         })
+      })
 
 
+      // console.log('did shelter data work', shelterData)
 
+      res.json(shelterData)
 
-      res.json(results.businesses.map(shelter =>{
-               return{
-               id: shelter.id,
-               name: shelter.name,
-               address: shelter.location.display_address.join(","),
-               url: shelter.url,
-               image: shelter.image_url,
-               latitude: shelter.coordinates.latitude,
-               longitude: shelter.coordinates.longitude,
-               process: process.env.bearer
-               }
+      // res.json(results.businesses.map(shelter =>{
+      //          return{
+      //          id: shelter.id,
+      //          name: shelter.name,
+      //          address: shelter.location.display_address.join(","),
+      //          url: shelter.url,
+      //          image: shelter.image_url,
+      //          latitude: shelter.coordinates.latitude,
+      //          longitude: shelter.coordinates.longitude,
+      //          process: process.env.bearer
+      //          }
 
-      }))
+      // }
+      
+      // ))
    }
       
    )
