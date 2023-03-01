@@ -170,7 +170,7 @@ function router(app) {
          method: 'GET',
          headers: {
              Accept: 'application/json',
-             Authorization: `${process.env.bearer}`         
+             Authorization: process.env.bearer         
              }
 
          }
@@ -179,6 +179,10 @@ function router(app) {
 
       console.log('this is results', results.businesses)
       console.log('this is process.env', process.env.bearer)
+
+
+
+
 
       res.json(results.businesses.map(shelter =>{
                return{
@@ -205,7 +209,7 @@ function router(app) {
          method: 'GET',
          headers: {
              Accept: 'application/json',
-             Authorization: process.env.bearer         
+             Authorization: `${process.env.bearer}`         
              }
 
          }
