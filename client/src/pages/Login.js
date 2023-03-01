@@ -13,7 +13,7 @@ function Login(){
 
     async function userLogin( e ){
         e.preventDefault()
-        console.log( `[userLogin]`, inputEmail.current.value )
+        // console.log( `[userLogin]`, inputEmail.current.value )
         
         // leverage browser built in + bootstrap features for form validation
         if( !refForm.current.checkValidity() ){            
@@ -27,7 +27,7 @@ function Login(){
             rememberMe: inputRememberMe.current.checked
         }
 
-        console.log('this is saveData', saveData)
+        // console.log('this is saveData', saveData)
 
         if( saveData.email.indexOf('@')<3 || saveData.password.length<8 ) {
             inputEmail.current.focus()

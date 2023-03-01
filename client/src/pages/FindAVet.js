@@ -12,6 +12,7 @@ function FindAVet() {
   async function getVets() {
     console.log('launched')
     const vetResults = await fetchJSON('/api/getVetInfo').catch(err => console.log(err))
+    console.log('this is the fetchJSON', fetchJSON)
     console.log(setVets)
     setVets(vetResults)
   }
