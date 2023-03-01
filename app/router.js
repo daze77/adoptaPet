@@ -184,23 +184,23 @@ function router(app) {
 
       let shelterData = [ ]
 
-      results.businesses.map(shelter => {
-         shelterData.push({
-            id: shelter.id,
-            name: shelter.name,
-            address: shelter.location.display_address.join(","),
-            url: shelter.url,
-            image: shelter.image_url,
-            latitude: shelter.coordinates.latitude,
-            longitude: shelter.coordinates.longitude,
-            process: process.env.bearer
-         })
-      })
+      // results.businesses.map(shelter => {
+      //    shelterData.push({
+      //       id: shelter.id,
+      //       name: shelter.name,
+      //       address: shelter.location.display_address.join(","),
+      //       url: shelter.url,
+      //       image: shelter.image_url,
+      //       latitude: shelter.coordinates.latitude,
+      //       longitude: shelter.coordinates.longitude,
+      //       process: process.env.bearer
+      //    })
+      // })
 
 
       // console.log('did shelter data work', shelterData)
 
-      res.json(shelterData)
+      res.json(results)
 
       // res.json(results.businesses.map(shelter =>{
       //          return{
