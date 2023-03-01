@@ -12,7 +12,7 @@ function FindAShelter() {
   async function getShelters() {
     console.log('launched')
     const shelterResults = await fetchJSON('/api/getShelterInfo').catch(err => console.log(err))
-    console.log(shelterResults)
+    console.log('here we go', shelterResults)
     setShelter(shelterResults)
   }
 

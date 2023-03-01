@@ -29,7 +29,7 @@ function fetchJSON( url, method='get', data={} ){
     if( method === 'post' || method === 'put' ) {
         fetchOptions.body = JSON.stringify( data )
     }
-  console.log('this is the fetchJSON results', fetch(url, fetchOptions))
+  console.log('this is the fetchJSON results from API', fetchOptions)
     return fetch( url,fetchOptions ).then( res=>res.json() )
 }
 
