@@ -14,7 +14,7 @@
 //     return json;
 //   }
 
-function fetchJSON( url, method='get', Authorization, data={} ){
+function fetchJSON( url, method='get', data={} ){
     method = method.toLowerCase()
     const fetchOptions = {
         method,
@@ -22,7 +22,7 @@ function fetchJSON( url, method='get', Authorization, data={} ){
             'Content-Type': 'application/json',
             // looks for a session entry in localStorage, and if so pass it
             'Session': localStorage.session || ''
-            ? Authorization && 'Authorization': Authorization
+            
         }
     }
     // only attach the body for put/post

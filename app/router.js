@@ -44,7 +44,7 @@ function router(app) {
 
       // generate a session-key
       const session = sessionManager.create(userData.id)
-      // console.log( `.. login complete! session: ${session}` )
+      console.log( `.. login complete! session: ${session}` )
       res.send({ status, session, userData, message })
    })
 

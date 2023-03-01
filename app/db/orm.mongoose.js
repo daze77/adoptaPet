@@ -53,7 +53,7 @@ async function userLogin( email, password ) {
 
    // compare the passwords to see if valid login
    const isValidPassword = await bcrypt.compare( password, userData.password )
-   // console.log( ` [loginUser] checking password (password: ${password} ) hash(${userData.password})`, isValidPassword )
+   console.log( ` [loginUser] checking password (password: ${password} ) hash(${userData.password})`, isValidPassword )
    if( !isValidPassword ) {
       return { status: false, message: 'Invalid password' }
    }
