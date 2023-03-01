@@ -173,7 +173,7 @@ function router(app) {
              }
 
          }
-      ).then(e => e.json())
+      ).then(e => e.json()).catch(err=>console.log(err))
 
 
       console.log('this is results', results)
