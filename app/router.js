@@ -176,7 +176,7 @@ function router(app) {
              }
 
          }
-      ).then(e => e.json()).catch(err=>console.log(err))
+      ).catch(err=>console.log(err.message))
 
 
       // console.log('this is results', results)
