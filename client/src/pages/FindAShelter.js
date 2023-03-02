@@ -19,7 +19,7 @@ function FindAShelter() {
         }
 
     }
- ).then(e => e.json()).catch(err=>{console.log(err.message)})
+ ).catch(err=>{console.log(err.message)})
     console.log('here we go', shelterResults)
     setShelter(shelterResults)
   }
