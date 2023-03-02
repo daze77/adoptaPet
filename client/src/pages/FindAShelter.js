@@ -12,10 +12,12 @@ function FindAShelter() {
   async function getShelters() {
     console.log('launched')
     const shelterResults = await fetch('/api/getShelterInfo', {
+      origin: '*',
       credentials: 'include',
       method: 'GET',
+      mode: 'cors',
       headers: {
-        Accept: 'application/api/getShelterInfo',
+        Accept: 'application/json',
       }
 
     }
