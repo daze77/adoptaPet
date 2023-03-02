@@ -2,6 +2,7 @@ const orm = require('./db/orm.mongoose')
 const sessionManager = require('./session-manager')
 var petfinder = require('@petfinder/petfinder-js');
 var client = new petfinder.Client({ apiKey: process.env.apiKey, secret: process.env.apiSecret })
+const fetch = require("node-fetch")
 
 
 // session checking middleware
