@@ -14,9 +14,8 @@ function FindAShelter() {
     const shelterResults = await fetch('/api/getShelterInfo', {
       method: 'GET',
       headers: {
-        Accept: 'application/json',
-        Authorization: process.env.bearer         
-        }
+        Accept: 'application/api/getShelterInfo',
+      }
 
     }
  ).catch(err=>{console.log(err.message)})
