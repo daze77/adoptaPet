@@ -11,19 +11,11 @@ function FindAShelter() {
 
   async function getShelters() {
     console.log('launched')
-    const shelterResults = await fetch('/api/getShelterInfo', {
-      origin: '*',
-      credentials: 'include',
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        Accept: 'application/json',
-      }
-
-    }
- ).catch(err=>{console.log(err.message)})
+    const shelterResults = await fetch('/api/getShelterInfo',)
+    .then(r => r.json())
+    .catch(err=>{console.log('this is the error message', err.message)})
     console.log('here we go', shelterResults)
-    setShelter(shelterResults)
+    setShelter(shelterResults.businesses)
   }
 
   useEffect(() => {

@@ -166,20 +166,16 @@ function router(app) {
 // retreiving the sherter information and pasing to front end
    app.get('/api/getShelterInfo', async function (req, res){
       const results = await fetch('https://api.yelp.com/v3/businesses/search?location=Toronto&term=%22pet%20shelter%22&radius=40000&sort_by=best_match&limit=50', {
-         origin: '*',
-         credentials: 'include',
-         method: 'GET',
-         mode: 'cors',
          headers: {
-             Accept: 'application/api/getShelterInfo',
+             Accept: 'application/json',
              Authorization: process.env.bearer         
              }
 
          }
-      ).catch(err=>console.log(err.message))
+      ).then(r => r.json()).catch(err=>console.log(err.message))
 
 
-      // console.log('this is results', results)
+      
       // console.log('this is process.env', process.env.bearer)
       // console.log('this is fetch', req)
 
@@ -201,9 +197,9 @@ function router(app) {
       // })
 
 
-      // console.log('did shelter data work', shelterData)
+      console.log('did shelter data work', shelterData)
 
-      res.json(results)
+      res.send(results)
 
       // res.json(results.businesses.map(shelter =>{
       //          return{
