@@ -12,6 +12,7 @@ function FindAShelter() {
   async function getShelters() {
     console.log('launched')
     const shelterResults = await fetch('/api/getShelterInfo', {
+      credentials: 'include',
       method: 'GET',
       headers: {
         Accept: 'application/api/getShelterInfo',

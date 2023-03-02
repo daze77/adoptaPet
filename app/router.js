@@ -166,9 +166,10 @@ function router(app) {
 // retreiving the sherter information and pasing to front end
    app.get('/api/getShelterInfo', async function (req, res){
       const results = await fetch('https://api.yelp.com/v3/businesses/search?location=Toronto&term=%22pet%20shelter%22&radius=40000&sort_by=best_match&limit=50', {
+         credentials: 'include',
          method: 'GET',
          headers: {
-             Accept: 'application/json',
+             Accept: 'application/api/getShelterInfo',
              Authorization: process.env.bearer         
              }
 
