@@ -11,7 +11,15 @@ function FindAShelter() {
 
   async function getShelters() {
     console.log('launched')
-    const shelterResults = await fetchJSON('/api/getShelterInfo').catch(err => console.log(err))
+    const shelterResults = await fetch('/api/getShelterInfo', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        Authorization: process.env.bearer         
+        }
+
+    }
+ ).then(e => e.json()).catch(err=>console.log(err))
     console.log('here we go', shelterResults)
     setShelter(shelterResults)
   }
@@ -26,11 +34,11 @@ function FindAShelter() {
     <div id="mainContainer">
       <h1>Animal Shelters in Toronto</h1>
 
-      <LocationContainer shelters={shelters}>
+      {/* <LocationContainer shelters={shelters}>
         <div id="mapinfo">
         </div>
-      </LocationContainer>
-      <ScrollContainer>
+      </LocationContainer> */}
+      {/* <ScrollContainer>
         <div class="row row-cols-1 row-cols-xl-3 gx-3"  >
           {shelters.map(shelter => (
             <ShelterCard
@@ -42,7 +50,7 @@ function FindAShelter() {
               url={shelter.url}
             />))}
         </div>
-      </ScrollContainer>
+      </ScrollContainer> */}
     </div >
   );
 }
