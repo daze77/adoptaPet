@@ -13,9 +13,9 @@ function FindAShelter() {
     console.log('launched')
     const shelterResults = await fetch('/api/getShelterInfo',)
     .then(r => r.json())
-    .catch(err=>{console.log('this is the error message', err.message)})
+    .catch(err => console.error('this is the error message', err.message))
     console.log('here we go', shelterResults)
-    setShelter(shelterResults.businesses)
+    setShelter(shelterResults)
   }
 
   useEffect(() => {

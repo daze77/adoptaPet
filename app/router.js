@@ -172,14 +172,17 @@ function router(app) {
              }
 
          }
-      ).then(r => r.json()).catch(err=>console.log(err.message))
+      )
+      .then(r => r.json())
+      // .then(r => console.log('this is the r from router', r.businesses[0]))
+      .catch(err => console.error(err))
 
 
       
       // console.log('this is process.env', process.env.bearer)
       // console.log('this is fetch', req)
 
-      // console.log('yo router did we get any results', results)
+      console.log('yo router did we get any results', results)
 
       let shelterData = [ ]
 
@@ -197,7 +200,7 @@ function router(app) {
       // })
 
 
-      console.log('did shelter data work', shelterData)
+      // console.log('did shelter data work', shelterData)
 
       res.send(results)
 
