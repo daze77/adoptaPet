@@ -183,9 +183,9 @@ function router(app) {
       // console.log('this is process.env', process.env.bearer)
       // console.log('this is fetch', req)
 
-      console.log('yo router did we get any results', results)
+      // console.log('yo router did we get any results', results)
 
-      let shelterData = [ ]
+      // let shelterData = [ ]
 
       // results.businesses.map(shelter => {
       //    shelterData.push({
@@ -203,23 +203,23 @@ function router(app) {
 
       // console.log('did shelter data work', shelterData)
 
-      res.send(results)
+      // res.json(results)
 
-      // res.json(results.businesses.map(shelter =>{
-      //          return{
-      //          id: shelter.id,
-      //          name: shelter.name,
-      //          address: shelter.location.display_address.join(","),
-      //          url: shelter.url,
-      //          image: shelter.image_url,
-      //          latitude: shelter.coordinates.latitude,
-      //          longitude: shelter.coordinates.longitude,
-      //          process: process.env.bearer
-      //          }
+      res.json(results.businesses.map(shelter =>{
+               return{
+               id: shelter.id,
+               name: shelter.name,
+               address: shelter.location.display_address.join(","),
+               url: shelter.url,
+               image: shelter.image_url,
+               latitude: shelter.coordinates.latitude,
+               longitude: shelter.coordinates.longitude,
+               process: process.env.bearer
+               }
 
-      // }
+      }
       
-      // ))
+      ))
    }
       
    )

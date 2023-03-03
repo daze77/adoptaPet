@@ -6,7 +6,7 @@ function Card(props) {
 
   return (
     <div class="col mb-3 ">
-      {/* <div class="card h-100 mb-3" id="shelterCard" >
+      <div class="card h-100 mb-3" id="shelterCard" >
         <div class="row g-0">
           <div class="col-md-4 ">
             <img src={props.image} class="img-fluid rounded-start " id="shelterCardImg" alt={props.name} />
@@ -20,7 +20,7 @@ function Card(props) {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
 
 
