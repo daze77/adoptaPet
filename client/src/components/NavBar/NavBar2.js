@@ -10,6 +10,12 @@ let timeout
 function NavBar2(){
 
     const [{ authOk, name }, dispatch ]= useStoreContext()
+    console.log('this is the name', name)
+
+    // console.log('if the name is false say false')
+    name==="" ? console.log('the name is blank') : console.log('the name is:', name)
+    console.log(!name)
+    
     const [ showMenu, setShowMenu ] = useState( true )
     // adding const for menu toggle
    
@@ -75,9 +81,9 @@ function NavBar2(){
                                 <NavLink to="/advice" className="nav-link" activeClassName="active">Advice</NavLink>
                             </li>
                             {/* {showMenuItem && <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>} */}
-                            {!name && <div className={`collapse navbar-collapse ` + (showMenu ? 'show' : '')} id="navbar">
+                            {!name && 
                              <li class="nav-item"> <NavLink to="/Login" className="nav-link" activeClassName="active">Login</NavLink></li>
-                            </div>}
+                            }
 
                         </ul>
                         {name && 
