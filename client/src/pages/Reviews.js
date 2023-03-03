@@ -1,8 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import fetchJSON from '../util/API'
-
+import { useStoreContext } from "../util/GlobalStore"
+import { Redirect } from 'react-router-dom'
 
 function Reviews() {
+  const [{ authOk }, dispatch ]= useStoreContext()
+
+
   const inputName = useRef()
   const inputOrganization = useRef()
   const inputSubject = useRef()
@@ -49,6 +53,8 @@ function Reviews() {
 
   return (
     <div>
+            { !authOk && <Redirect to='/login' /> }
+
       <h1>Reviews</h1>
       <div className="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>

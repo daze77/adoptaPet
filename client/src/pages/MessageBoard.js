@@ -1,8 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react'
 import fetchJSON from '../util/API'
+import { useStoreContext } from "../util/GlobalStore"
+import { Redirect } from 'react-router-dom'
+
+
 
 
 function MessageBoard() {
+  const [{ authOk }, dispatch ]= useStoreContext()
+
   const inputName = useRef()
   const inputSubject = useRef()
   const inputMessage = useRef()
@@ -32,14 +38,17 @@ function MessageBoard() {
   async function messageLoad() {
     // const { status, messages: name, subject, message }= await fetchJSON( '/api/messages' )
     const { status, messageList } = await fetchJSON('/api/messages')
+    console.log(`Message load ${status}`, !status)
+
     console.log(`Message load ${status}`, messageList)
     setAllMessages(messageList)
 
-    // if( !status ){
-    //   // for simplicity, we simply log user out if an error (ex. forbidden for invalid session)
-    //   dispatch({ type: "USER_LOGOUT", message })
-    //   return
-    // }
+    if( !status ){
+      // for simplicity, we simply log user out if an error (ex. forbidden for invalid session)
+      // dispatch({ type: "USER_LOGOUT", message })
+      // return
+      console.log('hahhahah')
+    }
 
     // // update tasks list
     // console.log( `.. GET /api/messages, messages:`, savedMessage )
@@ -109,6 +118,7 @@ function MessageBoard() {
 
   return (
     <div>
+      { !authOk && <Redirect to='/login' /> }
       <h1>Message Board</h1>
       <div className="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>

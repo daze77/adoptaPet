@@ -179,31 +179,7 @@ function router(app) {
       .catch(err => console.error(err))
 
 
-      
-      // console.log('this is process.env', process.env.bearer)
-      // console.log('this is fetch', req)
-
-      // console.log('yo router did we get any results', results)
-
-      // let shelterData = [ ]
-
-      // results.businesses.map(shelter => {
-      //    shelterData.push({
-      //       id: shelter.id,
-      //       name: shelter.name,
-      //       address: shelter.location.display_address.join(","),
-      //       url: shelter.url,
-      //       image: shelter.image_url,
-      //       latitude: shelter.coordinates.latitude,
-      //       longitude: shelter.coordinates.longitude,
-      //       process: process.env.bearer
-      //    })
-      // })
-
-
-      // console.log('did shelter data work', shelterData)
-
-      // res.json(results)
+   
 
       res.json(results.businesses.map(shelter =>{
                return{
@@ -220,11 +196,7 @@ function router(app) {
       }
       
       ))
-   }
-      
-   )
-
-
+   })
 
 // retreiving the vet information and pasing to front end
 
@@ -268,20 +240,6 @@ function router(app) {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router
